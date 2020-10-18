@@ -10,11 +10,11 @@
 
   Images are nothing but collection of *pixels*. Different values are assigned to each pixel in the image that determines its *color*. To clearly understand the concept of images, consider a *5X5 grid* that has 5 rows and 5 columns as below:
   
-  ![Image_of_grid](extras/5X5_empty_grid.png)
+  ![Image_of_grid](5X5_empty_grid.png)
   
   If each of the rows is numbered from 1 to 5 and each of the columns is also numbered from 1 to 5, then **the color of individual blocks (i,j)** where *i represents row number and j represents column number*, can be changed that makes the grid colorful. Similarly, *pixels* of the image are assigned values to determine their colors, hence resulting in the desired image.
   
-  ![Image_of_colored_grid](extras/5X5_colored_grid.png)
+  ![Image_of_colored_grid](5X5_colored_grid.png)
   
   The above image shows how some of the blocks are assigned the color "Green" to make the grid appear different. **This simpler tactic is applied in creating and processing images**. OpenCV basically processes the images by *acquiring the information of each pixel in the image and modifying it as per the requirement*. The idea behind accessing and processing videos remains the same since *videos are nothing but a sequence of images*. The quality of an image depends on the *resolution* where as quality of a video depends on the *number of frames per second*.
 
@@ -36,7 +36,7 @@
         
     **A snapshot of the installation is attached below:**
     
-    ![Image_of_opencv_installation](extras/anaconda_prompt_opencv_installation.png)
+    ![Image_of_opencv_installation](anaconda_prompt_opencv_installation.png)
     
     
     After the installation, for further projects, OpenCV can be imported on the IDE using the following statement:
@@ -253,7 +253,7 @@ The idea behind determining if the shape is a square or a rectangle is that the 
 
 After the class definition is *done*, image **loading and processing** is required to utilize the function that is already defined. The image which contains different shapes is **read and loaded to a variable**. To ease the process of shape detection, the image needs a little processing to make the process of finding contours easier that makes a few steps. Fiest, the image is resized using the imutils.resize() function to enable *better approximation* of the contours. In future process, the factor by which the iamge is resized is of importance, because of which the ratio is found out and stored in a variable. 
 
-    image = cv2.imread('extras/shapes_and_colors.jpg')
+    image = cv2.imread('shapes_and_colors.jpg')
     resized = imutils.resize(image, width=300)
     ratio = image.shape[0] / float(resized.shape[0])
     
@@ -308,11 +308,11 @@ These are the *2 phases* that **repeat on loop** for the contours. These steps w
 
 Consider the following *image*:
 
-![Image](extras/shapes_and_colors.jpg)
+![Image](shapes_and_colors.jpg)
 
 After detecting the shapes of all contours, the *output image* is: 
 
-![Image2](extras/sandcoutput.gif)
+![Image2](sandcoutput.gif)
 
 
 
