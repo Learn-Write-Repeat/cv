@@ -28,8 +28,8 @@ written in Python, C++, Java and can be integrated into many languges. This is o
 ### Depth Maping
 In an image each pixel has its own depth and each depth is shown by grayscale. Each depth of pixel is means the distance of surface to a viewpoint, like from place the image is taken.
 For this 2 images are required of same, those images are called **stereoscopic images**, Like-
-![img1](https://github.com/Shubham0Rajput/Open-contributions/blob/master/Shubham_OpenCV/eg1.jpg)
-![img2](https://github.com/Shubham0Rajput/Open-contributions/blob/master/Shubham_OpenCV/eg2.jpg)
+![img1](eg1.jpg)
+![img2](eg2.jpg)
 
 
 Stereoscopic images images same but camera is moved by some cm in case of Right Image. Each different depth is of different shade in result output and can be easyly differentiable from eyes. Depth maping has same concept as human eye, we look at a common point and have 2 different prospective, same the system need 2 images to create its own 
@@ -56,7 +56,7 @@ Step 1. Download
 
 Step 2. Copy Images
 ---------------------------------
-Download and Add these images [l.jpg](https://github.com/Shubham0Rajput/Open-contributions/blob/master/Shubham_OpenCV/l.jpg), [r.jpg](https://github.com/Shubham0Rajput/Open-contributions/blob/master/Shubham_OpenCV/r.jpg) into your Google Drive.
+Download and Add these images [l.jpg](l.jpg), [r.jpg](r.jpg) into your Google Drive.
 This is done because sometimes images are loaded in Google colab and error comes.
 
 Step 3. Open Code
@@ -93,4 +93,4 @@ Additional
 Result
 ---------------------------------
 Result should look like this
-![RESULT](https://github.com/Shubham0Rajput/Open-contributions/blob/master/Shubham_OpenCV/result.jpg)
+![RESULT](result.jpg)
