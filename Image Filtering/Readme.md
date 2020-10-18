@@ -1,1 +1,1 @@
-# Image Filtering - Haar Cascase Classifier
+# Image Filtering
