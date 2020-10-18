@@ -48,7 +48,7 @@
    For coloured images each pixel can have levels of *red,green,blue*. Different levels of red, green and blue give different colours to the respective pixels giving out a fully coloured image.
   
   
-   ![image](extras/original.jpg)   
+   ![image](original.jpg)   
    
    
   
