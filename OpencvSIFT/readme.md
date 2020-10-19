@@ -15,14 +15,14 @@ The computational cost is reduced by applying some operations on loactions that 
 
   This image from Low's paper gives a small discription
 
-  ![Gaussian Difference](/OpencvSIFT/extras/Gaussian.PNG)
+  ![Gaussian Difference](/OpencvSIFT/extras/Gaussian.png)
 
 - ### Key Point Localization -
   This step includes accurately locating the feature key points. Here the candidates are chosen from the extrema detection. There are few mathematical concepts used in this procedure because such steps could have some error in detection and to solve those error one need to apply come threshold to it. So, some mathematical aspects used here are [Hessian matrix][Hessian_matrix] to remove outliners.
   
   So the pictorial description would be
 
-  ![Extrema](/OpencvSIFT/extras/extrema.PNG) 
+  ![Extrema](/OpencvSIFT/extras/extrema.png) 
    You could see the yellow lines that shows the keypoints locations at maxima and minima of the difference-of-Gaussian function depicted in vectors. 
 
 - ### Orientation Assignment - 
@@ -30,7 +30,7 @@ The computational cost is reduced by applying some operations on loactions that 
 
   This image could give you a brief idea about this procedure
 
-  ![Orientation assignment](/OpencvSIFT/extras/orientation.PNG) 
+  ![Orientation assignment](/OpencvSIFT/extras/orientation.png) 
 
 So with this we conclude with the feature extraction procedure and we can continue with the local image Descriptor. 
 
@@ -46,7 +46,7 @@ The steps involved here are -:
 - Compute the relative orientation and magnitude in a 16 * 16 neighborhood at key point.
 - Form weighted histogram for 4 * 4 region. This would give 16 histograms each of 8 dimension in one long vectors of 128 dimensions. 
 
-![descriptor](/OpencvSIFT/extras/descriptor.PNG) 
+![descriptor](/OpencvSIFT/extras/descriptor.png) 
 
 - Store numbers in a vector.
 - Remove the large gradients and then normalize to unit vector.
