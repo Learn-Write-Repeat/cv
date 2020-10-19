@@ -1,0 +1,5 @@
+extras/sift_intro.png)
+extras/Gaussian.PNG
+extras/extrema.PNG
+extras/orientation.PNG)
+extras/descriptor.PNG)
