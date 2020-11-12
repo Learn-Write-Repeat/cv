@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SURF(Speeded-Up Robust Feature)</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="keywords" content="SURF,Robust feature,robust,speeded-up">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <meta name="description" content="Speeded Up Robust Feature (SURF) is an image region descriptor and detector that is constant with respect to scale, orientation, and illumination to detect interest points.">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 11px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Authors</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Free Courses</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">SURF(Speeded-Up
+                Robust Feature)<br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Aisha Rawat </h3>
+      
+        
+        <ul style="padding:0px;">
+            <li><a href="https://fb.com/aisha%20rawat"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/aisharawat93"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://kaggle.com/aisha%20rawat"><i class="fab fa-kaggle"></i></a></li>
+            <li><a href="https://github.com/AishaRawat"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/aisha-rawat-a8bb26186"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+        <h1>SURF(Speeded-up Robust Feature)</h1>
+      <p>Speeded Up Robust Feature (SURF) is an image region descriptor and detector that is constant with respect to scale, orientation, and illumination.
+To detect interest points, SURF uses an integer approximation of the determinant of Hessian blob detector, which can be computed with 3 integer operations using a precomputed integral image. Its feature descriptor is based on the sum of the Haar wavelet response around the point of interest. These can also be computed with the aid of the integral image.</p>
+      <ul><li>It is an enhanced version of SIFT.</li>
+        <li>It is faster than SIFT.</li>
+</ul>
+      <h3>A feature detector detects the keypoints and a feature descriptor describes the keypoints(how does the surrounding or pixels look like)</h3>
+      <p>Keypoints are points of interest in an image that can be used to compare images and perform tasks such as image alignment and image registration.</p>
+      <p>A feature descriptor is an algorithm which takes an image and outputs feature descriptors/feature vectors. Feature descriptors encode interesting information into a series of numbers and act as a sort of numerical "fingerprint" that can be used to differentiate one feature from another. Ideally this information would be invariant under image transformation, so we can find the feature again even if the image is transformed in some way.
+<b>SURF descriptors have been used :</b></p>
+      <ul><li>to locate and recognize objects, people or faces</li>
+ <li>to reconstruct 3D scenes</li>
+  <li>to track objects and to extract points of interest.</li></ul>
+      <p>SURF was first published by Herbert Bay, Tinne Tuytelaars, and Luc Van Gool,
+and presented at the 2006 European Conference on Computer Vision.
+<br></p>
+      <p><b> The algorithm has three main parts:</b></p>
+      <ul><li> interest point detection</li>
+        <li>local neighborhood description </li>
+        <li>matching.</li></ul>
+      <p><b>Interest Point Detection</b><br>
+SURF uses a blob detector based on the Hessian matrix to find points of interest. The determinant of the Hessian matrix is used as a measure of local change around the point    and points are chosen where this determinant is maximal.
+SURF also uses the determinant of the Hessian for selecting the scale,&lt;
+The sum of the original image within a rectangle can be evaluated quickly using the integral image, requiring evaluations at the rectangle's four corners.
+SURF uses a blob detector based on the Hessian matrix to find points of interest. The determinant of the Hessian matrix is used as a measure of local change around the            point and points are chosen where this determinant is maximal. In contrast to the Hessian-Laplacian detector by Mikolajczyk and Schmid, SURF also uses the determinant of       the Hessian for selecting the scale, as is also done by Lindeberg. Given a point p=(x, y) in an image I, the Hessian matrix H(p, σ) at point p and scale σ, is:<br>
+<a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/SURF/Aisha%20Rawat/79c73bc892769b2b27218327be8af9f72fc17945.svg"><img src="assets/img/formula.svg" alt="Image" style="max-width:100%;"></a></p>
+      <pre lang="#import"><code>import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+#read image and convert to grayscale
+image = cv2.imread('index.png')
+gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+#instantiate surf object
+surf  = cv2.xfeatures2d.SURF_create(400)
+#calculate keypoints and their orientation
+keypoints,descriptors = surf.detectAndCompute(gray,None)
+with_keypoints = cv2.drawKeypoints(gray,keypoints)
+plt.imshow(with_keypoints)
+</code></pre>
+      <p><a style="color:blue;" href="https://github.com/AishaRawat/Open-contributions/blob/master/AishaRawat_Open_cv/SURF.ipynb" target="_blank">Surf Implementation on Jupyter Notebook</a>
+(click the link , you will reach to python notebook )</p>
+      <p>This is the most basic and simple explanation of surf <br> Happy Learning !! 📚 </p>
+      
+      
+ 
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+    <script>
+        function cb(response) {
+        document.getElementById('visits').innerText = response.value;
+        }
+    </script>
+    <script async src="https://api.countapi.xyz/hit/surf/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
