@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Rock Paper Scissors</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="keywords" content="rock,paper,scissors,keras,opencv,projects">
+    <meta name="description" content="A fun and exciting Deep Learning based implementation of the age old game of Rock Paper Scissors. Using Tensorflow, Keras and OpenCV using Python.">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 11px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Why Us?</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Timeline</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Free Courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">our authors</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">Learn OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">Rock Paper Scissor with Keras and OpenCV</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-4 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Nakul Singh </h3>
+      
+        
+        <ul style="padding:0px">
+            
+            <li><a href="https://www.kaggle.com/nakulsingh1289"><i class="fab fa-kaggle"></i></a></li>
+            <li><a href="https://github.com/nakulsingh1289"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/nakul-singh-247205145/"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-8 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+        <h1>Rock Paper Scissor with Keras and OpenCV</h1>
+      <p>The basis of this project was to experiment with Deep Learning and Image Classification with the aim of building a simple yet fun iteration of the infamous Rock Paper Scissors game.</p>
+      <h2>1.Requirements</h2>
+      <ul>
+<li>Keras</li>
+<li>os</li>
+<li>OpenCV</li>
+<li>TensorFlow</li>
+</ul>
+      <h2>2.Installations</h2>
+      <ul>
+<li>pip install Keras</li>
+<li>pip install tensorflow</li>
+<li>pip install opencv-python</li>
+</ul>
+      <h2>3.Understanding the Project</h2>
+<p><strong>Why</strong></p>
+      <ul>
+<li>Fun project but can be used to build a rock paper scissor game.</li>
+</ul>
+      <p><strong>Difficulty Level</strong></p>
+      <ul>
+<li>Beginners</li>
+</ul>
+      <p><strong>Project is divided into two parts</strong></p>
+ <ul>
+<li>Training a deep neural net to detect rock, paper and scissor sign from image.</li>
+<li>Deploying trained model via webcan using OpenCV.</li>
+</ul>
+      <h2>Flow Chart</h2>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/nakulsingh1289/Projects/blob/master/Rock%20Paper%20Scissors%20with%20AI%20using%20keras%20and%20openCV/IMG-20200918-WA0011.jpg?raw=true"><img src="assets/img/IMG-20200918-WA0011.jpg" alt="Flow chart" style="max-width:100%;"></a></p>
+      <h2>Understanding Flowchart</h2>
+      <ul>
+<li>OpenCV captures image from webcam</li>
+<li>Then cropped image is passed to a trained deep neural network model which classifies the image into rock, paper or scissor.</li>
+</ul>
+      <h3>Deep Neural Net Layers</h3>
+      <ul>
+<li>4 Convolution layers followed by maxpooling layers</li>
+<li>2 Dense layers with activation relu</li>
+<li>Followed by Dropout Layers</li>
+<li>Final Dense layer with Softmax activation</li>
+</ul>
+      <br>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Rock%20Paper%20Scissors/Nakul/Nakul_ComputerVision_RockPaperScissor.ipynb" target="_blank">Implementation in Jupyter Notebook</a><p>
+      
+      <p>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p style="text-align:center;">Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><i class="fa fa-linkedin-square" style="font-size: 24px;"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-facebook" style="font-size: 24px;"></i></button><button class="btn btn-primary"
+                type="button"><i class="fa fa-instagram" style="font-size: 24px;"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-github" style="font-size: 24px;"></i></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/rock/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
