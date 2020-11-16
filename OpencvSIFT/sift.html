@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SIFT(Scale Invariant Feature Transform)</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="As stated SIFT stands for Scale Invariant Feature Transform. This algorithm is patented by David Lowe, University of British Columbia in 2004. Before this algorithm, there were many detectors like corner detector">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="keywords" content="SURF,Robust feature,robust,speeded-up">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 11px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Authors</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Free Courses</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">SIFT(Scale Invariant Feature Transform)</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Rishav Dash</h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://github.com/Rishav-hub" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/rishav-dash-4b1b84189/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/rishav.dash/"><i class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" href="https://9930046.wixsite.com/intruder"><i class="fa fa-globe"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Scale Invariant Feature Transform (SIFT)</h1>
+      <p>As stated SIFT stands for Scale Invariant Feature Transform. This algorithm is patented by David Lowe, University of British Columbia in 2004. Before this algorithm, there were many detectors like corner detector, eg. Harris. But those detector were rotation- inavriant, but not scale invariant. SIFT algorithm changed the whole scenario by being both rotation and scale invariant. To use this algorithm commericially, one needs to pay for it as it is patented.</p>
+      <h2>To give you the Basic idea of SIFT with an image-:</h2>
+      <img src="assets/img/sift_intro.png" alt="intro"></img>
+      <h2>Some Key-points for feature extraction-:</h2>
+      <p>The computational cost is reduced by applying some operations on loactions that pass the initial tests</p>
+      <ul>
+<li>
+<h3>Scale space peak selection -</h3>
+<p>It selects the potential locations to find the feature. Basically we find the <a style="color:blue;" href="https://www.youtube.com/watch?v=m-yK8j4o56s" rel="nofollow" target="_blank">interest points</a> that are invariant to rotation and scaling. To explain the mathematical part, the image is convolved with the <a style="color:blue;" target="_blank" href="https://www.youtube.com/results?search_query=Gaussian+kernel" rel="nofollow">Gaussian Function</a> and octave of diferent scales are formed, the Difference of Gaussian of each octave is taken. Low gave some general value for number of scale and value of sigma.</p>
+<p>This image from Low's paper gives a small discription</p>
+<img style="width:50%;" src="assets/img/Gaussian.png" ></img>
+</li>
+<li>
+<h3>Key Point Localization -</h3>
+<p>This step includes accurately locating the feature key points. Here the candidates are chosen from the extrema detection. There are few mathematical concepts used in this procedure because such steps could have some error in detection and to solve those error one need to apply come threshold to it. So, some mathematical aspects used here are <a style="color:blue;" target="_blank" href="https://www.youtube.com/watch?v=LbBcuZukCAw" rel="nofollow">Hessian matrix</a> to remove outliners.</p>
+<p>So the pictorial description would be</p>
+<img src="assets/img/extrema.png"></img>
+<p>You could see the yellow lines that shows the keypoints locations at maxima and minima of the difference-of-Gaussian function depicted in vectors.</p>
+</li>
+<li>
+<h3>Orientation Assignment -</h3>
+<p>Now that we have assigned vectors to each key points, we can now assign the orientation to the key points. Here, for each image sample the gradient magnitude and orientation is computed. A histogram is formed from the gradient orientation of the sample within the region. Select the peak as the direction of the key points. Low stated that there can also be an another local peak within 80% of the highest peak.</p>
+<p>This image could give you a brief idea about this procedure</p>
+<img style="width:50%;"src="assets/img/orientation.png"></img>
+</li>
+</ul>
+      <p>So with this we conclude with the feature extraction procedure and we can continue with the local image Descriptor.</p>
+      <p>But before concluding this Low mentioned that there is only 95% accuracy with the feature extraction method with is due to some noise introduced in real life scenario. The Image noise vs Repetability graph can be seen in Low's paper.</p>
+<h2>Local Image Descriptor -:</h2>
+   <p>So the possible descriptor would be to store intensity sample in the neighborhood by taking a window. But, this may be sensitive to lighting changes.</p>
+      <p>So we could go for the gradient orientation as it won't get affected with smalll changes like intensity.</p>
+      <p>The steps involved here are -:</p>
+  <ul>
+<li>Compute the relative orientation and magnitude in a 16 * 16 neighborhood at key point.</li>
+<li>Form weighted histogram for 4 * 4 region. This would give 16 histograms each of 8 dimension in one long vectors of 128 dimensions.</li>
+</ul>    
+      <img src="assets/img/descriptor.png"></img>
+ <ul>
+<li>Store numbers in a vector.</li>
+<li>Remove the large gradients and then normalize to unit vector.</li>
+</ul>
+     <p>Now as we have the vectors for the descriptor we can match the keypoints against a database of that obtained from training images.</p>
+      <ul>
+<li>This can be done using the nearest neighbour match. There are many methods that can be used for nearest neighbor.</li>
+<li>To generate candidate matches, find patches that have the most similar appearance or SIFT appearance.</li>
+<li>Compare them all and take the closest match.</li>
+</ul>
+  <p>This ends with the SIFT extractor and descriptor.</p>
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+      
+      
+ <h2>References -:</h2>
+          <ul>
+<li><a style="color:blue;" target="_blank" href="https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf" rel="nofollow">David Low's paper</a></li>
+<li><a style="color:blue;" target="_blank" href="https://www.youtube.com/watch?v=NPcMS49V5hg&amp;t=3071s" rel="nofollow">UCF Computer Vision Video Lectures 2012</a></li>
+<li><a style="color:blue;" target="_blank" href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html" rel="nofollow">OpenCV Totorial on SIFT</a></li>
+</ul>
+
+      
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/sift/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
