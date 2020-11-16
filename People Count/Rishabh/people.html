@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>People Count (OpenCV)</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="keywords" content="SURF,Robust feature,robust,speeded-up">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <meta name="description" content="Speeded Up Robust Feature (SURF) is an image region descriptor and detector that is constant with respect to scale, orientation, and illumination to detect interest points.">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 11px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Authors</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Free Courses</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">People Count using OpenCV</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Rishabh Verma</h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://github.com/rishabhv333" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/rishabh-verma-6a8958122" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+        <h1>Counting Number of people using OpenCV</h1>
+      <h2>What is OpenCV?</h2>
+      <p>OpenCV (Open Source Computer Vision Library: <a style="color:blue;" href="http://opencv.org" rel="nofollow" target="_blank">http://opencv.org</a>) is an open-source library that includes several hundreds of computer vision algorithms. In simple language it is    library used for Image Processing. It is mainly used to do all the operation related to Images.</p>
+      <h2>What it can do?</h2>
+      <ul>
+<li>
+<p>Read and Write Images.</p>
+</li>
+<li>
+<p>Detection of faces and its features.</p>
+</li>
+<li>
+<p>Detection of shapes like Circle,rectangle etc in a image. E.g Detection of coin in images.</p>
+</li>
+<li>
+<p>Text recognition in images. e.g Reading Number Plates/</p>
+</li>
+<li>
+<p>Modifying image quality and colors e.g Instagram, CamScanner.</p>
+</li>
+<li>
+<p>Developing Augmented reality apps.</p>
+<p>and many more...</p>
+</li>
+</ul>
+    <h1>People Counter</h1> 
+      <h2>Required Python libraries for people counting</h2>
+      <p>In order to build our people counting applications, we’ll need a number of different Python libraries, including:</p>
+      <ul>
+<li>NumPy</li>
+<li>OpenCV</li>
+<li>dlib</li>
+<li>imutils</li>
+</ul>
+      <h2>Combining both object detection and object tracking</h2>
+
+      <p>Highly accurate object trackers will combine the concept of object detection and object tracking into a single algorithm, typically divided into two phases:</p>
+      <p>Phase 1 — Detecting: During the detection phase we are running our computationally more expensive object tracker to (1) detect if new objects have entered our view, and (2) see if we can find objects that were “lost” during the tracking phase. For each detected object we create or update an object tracker with the new bounding box coordinates. Since our object detector is more computationally expensive we only run this phase once every N frames.</p>
+      <p>Phase 2 — Tracking: When we are not in the “detecting” phase we are in the “tracking” phase. For each of our detected objects, we create an object tracker to track the object as it moves around the frame. Our object tracker should be faster and more efficient than the object detector. We’ll continue tracking until we’ve reached the N-th frame and then re-run our object detector. The entire process then repeats.</p>
+      <p>The benefit of this hybrid approach is that we can apply highly accurate object detection methods without as much of the computational burden. We will be implementing such a tracking system to build our people counter.</p>
+      <h2>Combining object tracking algorithms</h2>
+      <img src="assets/img/image.gif" alt="implementation"></img>
+      <p>Figure shows an animation demonstrating the steps in the centroid tracking algorithm.</p>
+      <p>To implement our people counter we’ll be using both OpenCV and dlib. We’ll use OpenCV for standard computer vision/image processing functions, along with the deep learning object detector for people counting.</p>
+      <p>To implement our people counter we’ll be using both OpenCV and dlib. We’ll use OpenCV for standard computer vision/image processing functions, along with the deep learning object detector for people counting.</p>
+      <p>Link to the code:</p>
+      <ul>
+<li>PeopleCounter.ipynb <a style="color:blue;" href="https://colab.research.google.com/drive/1f07l4GZvDBwbdyX6YqQYfpkxvNzlaYGr?usp=sharing" rel="nofollow">colab</a></li>
+<li>camera.ipynb <a style="color:blue;" href="https://colab.research.google.com/drive/1GB7CZPJPGpLDCwTrmKdxz1e4Bbm3FaHj?usp=sharing" rel="nofollow">colab</a></li>
+</ul>
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+      <h2>Acknowledgments</h2>
+      <ul>
+<li>DevIncept Mentor</li>
+<li>Pyimagesearch</li>
+<li>Medium blog posts</li>
+</ul>
+      
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/people/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
