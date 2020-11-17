@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blurring and Sharpening(OpenCV)</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="First of all in order to well understand the topic we have to learn about convolution operation which is the base of the concept
+Convolution is a mathematical operation performed on two functions producing a third function which is typically a modified version of the original function ie.">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="keywords" content="SURF,Robust feature,robust,speeded-up">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">Blurring and Sharpening</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Gurdeep Singh </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/gurdeep-singh-bhatia-319441171/"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Blurring and Sharpening</h1>  
+      <h4>First of all in order to well understand the topic we have to learn about convolution operation which is the base of the concept</h4>
+      <p>Convolution is a mathematical operation performed on two functions producing a third function which is typically a modified version of the original function ie.</p>
+      <p><em><strong>output_image(modified_image) = original_image(first_function)   x   kernel_function(second_function)</strong></em></p>
+      <p><em>Here the output_image can be the sharpened/blurred image of the original_image and kernel_function is a second function with which we do convolution operation on our original image</em></p>
+      <p><em><strong>Now kernel is responsible for the modification of original image.Different kernels are designed for different operations(blurring, sharpening, edge detection)</strong></em></p>
+      <img style="max-width:100%;"src="assets/img/blur.png" alt="algorithm"></img>
+      <p>Here I is original image and k is kernel and we performing convolution bw I and K.</p>
+      <p><strong>Basically kernel is a matrix. We perform the convolution operation by sliding this kernel/filter over the input/original image. At every location, we do element-wise matrix multiplication and sum the result. This sum goes into the feature map(output of operation or modified image). The red area where the convolution operation takes place with blue kernel  is called the receptive field. Due to the size of the filter the receptive field is also 3x3.And green area is the ouput of the repective convolution operation. Likewise we perform the convolution operation on all over the input image with kernel and then we get the output as shown in figure.</strong></p>
+      <p>So sharpening and blurring will get performed by choosing appropriate kernel</p>
+      <p>Like wise we choose kernel and apply convolution.</p>
+      <p>Now there are various inbuilt opencv functions that can do such convolution operation with predefined kernels and give us blurred images or sharpened images,  whatever we want. Various functions are as follows:</p>
+      <ul>
+<li>
+<p><strong>Blurring</strong></p>
+<ol>
+<li>MedianBlur() - This will do convolution with such kernel that will extract the median form the inout image. ie here the central element of the original image is replaced by the median of all pixels in the kernel area.</li>
+<li>GaussianBlur() - This uses the gaussian kernel to produce the blurred image</li>
+<li>bilateralFilter() - This will blur while keeping the edges sharp. It also takes a Gaussian filter/kernel in space, but one more gaussian filter which is a function of pixel difference. The pixel difference function makes sure that only those pixels with similar intensity to central pixel is considered for blurring. So it preserves the edges since pixels at edges will have large intensity variation.</li>
+</ol>
+</li>
+<li>
+<p><strong>Sharpening</strong></p>
+<ol>
+<li>Here we use our defined kernel and then apply convolution operation by using filter function of opencv on our input image</li>
+</ol>
+</li>
+</ul>
+     <br> <p>Implementation in <a style="color:blue" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Blurring%20and%20Sharpening/gurdeepsingh_openCV_blurring_and_sharpening.ipynb" target="-blank">Jupyter Notebook</a></p> 
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/blur/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
