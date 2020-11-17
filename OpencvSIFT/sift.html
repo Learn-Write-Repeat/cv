@@ -35,10 +35,10 @@
         <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
                 data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
-                <ul class="nav navbar-nav ml-auto" style="font-size: 11px;">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contribute</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Authors</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Free Courses</a></li>
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
                 </ul>
             </div>
         </div>
@@ -81,7 +81,7 @@
       <h1>Scale Invariant Feature Transform (SIFT)</h1>
       <p>As stated SIFT stands for Scale Invariant Feature Transform. This algorithm is patented by David Lowe, University of British Columbia in 2004. Before this algorithm, there were many detectors like corner detector, eg. Harris. But those detector were rotation- inavriant, but not scale invariant. SIFT algorithm changed the whole scenario by being both rotation and scale invariant. To use this algorithm commericially, one needs to pay for it as it is patented.</p>
       <h2>To give you the Basic idea of SIFT with an image-:</h2>
-      <img src="assets/img/sift_intro.png" alt="intro"></img>
+      <img style="max-width:100%;height:auto;" src="assets/img/sift_intro.png" alt="intro"></img>
       <h2>Some Key-points for feature extraction-:</h2>
       <p>The computational cost is reduced by applying some operations on loactions that pass the initial tests</p>
       <ul>
@@ -89,20 +89,20 @@
 <h3>Scale space peak selection -</h3>
 <p>It selects the potential locations to find the feature. Basically we find the <a style="color:blue;" href="https://www.youtube.com/watch?v=m-yK8j4o56s" rel="nofollow" target="_blank">interest points</a> that are invariant to rotation and scaling. To explain the mathematical part, the image is convolved with the <a style="color:blue;" target="_blank" href="https://www.youtube.com/results?search_query=Gaussian+kernel" rel="nofollow">Gaussian Function</a> and octave of diferent scales are formed, the Difference of Gaussian of each octave is taken. Low gave some general value for number of scale and value of sigma.</p>
 <p>This image from Low's paper gives a small discription</p>
-<img style="width:50%;" src="assets/img/Gaussian.png" ></img>
+<img style="max-width:100%;height:auto;" src="assets/img/Gaussian.png" ></img>
 </li>
 <li>
 <h3>Key Point Localization -</h3>
 <p>This step includes accurately locating the feature key points. Here the candidates are chosen from the extrema detection. There are few mathematical concepts used in this procedure because such steps could have some error in detection and to solve those error one need to apply come threshold to it. So, some mathematical aspects used here are <a style="color:blue;" target="_blank" href="https://www.youtube.com/watch?v=LbBcuZukCAw" rel="nofollow">Hessian matrix</a> to remove outliners.</p>
 <p>So the pictorial description would be</p>
-<img src="assets/img/extrema.png"></img>
+<img style="max-width:100%;height:auto;" src="assets/img/extrema.png"></img>
 <p>You could see the yellow lines that shows the keypoints locations at maxima and minima of the difference-of-Gaussian function depicted in vectors.</p>
 </li>
 <li>
 <h3>Orientation Assignment -</h3>
 <p>Now that we have assigned vectors to each key points, we can now assign the orientation to the key points. Here, for each image sample the gradient magnitude and orientation is computed. A histogram is formed from the gradient orientation of the sample within the region. Select the peak as the direction of the key points. Low stated that there can also be an another local peak within 80% of the highest peak.</p>
 <p>This image could give you a brief idea about this procedure</p>
-<img style="width:50%;"src="assets/img/orientation.png"></img>
+<img style="max-width:100%;height:auto;" src="assets/img/orientation.png"></img>
 </li>
 </ul>
       <p>So with this we conclude with the feature extraction procedure and we can continue with the local image Descriptor.</p>
@@ -115,7 +115,7 @@
 <li>Compute the relative orientation and magnitude in a 16 * 16 neighborhood at key point.</li>
 <li>Form weighted histogram for 4 * 4 region. This would give 16 histograms each of 8 dimension in one long vectors of 128 dimensions.</li>
 </ul>    
-      <img src="assets/img/descriptor.png"></img>
+      <img style="max-width:100%;height:auto;" src="assets/img/descriptor.png"></img>
  <ul>
 <li>Store numbers in a vector.</li>
 <li>Remove the large gradients and then normalize to unit vector.</li>
