@@ -81,7 +81,7 @@ Convolution is a mathematical operation performed on two functions producing a t
       <p><em><strong>output_image(modified_image) = original_image(first_function)   x   kernel_function(second_function)</strong></em></p>
       <p><em>Here the output_image can be the sharpened/blurred image of the original_image and kernel_function is a second function with which we do convolution operation on our original image</em></p>
       <p><em><strong>Now kernel is responsible for the modification of original image.Different kernels are designed for different operations(blurring, sharpening, edge detection)</strong></em></p>
-      <img style="max-width:100%;"src="assets/img/blur.png" alt="algorithm"></img>
+      <img style="max-width:100%;height:auto;"src="assets/img/blur.png" alt="algorithm"></img>
       <p>Here I is original image and k is kernel and we performing convolution bw I and K.</p>
       <p><strong>Basically kernel is a matrix. We perform the convolution operation by sliding this kernel/filter over the input/original image. At every location, we do element-wise matrix multiplication and sum the result. This sum goes into the feature map(output of operation or modified image). The red area where the convolution operation takes place with blue kernel  is called the receptive field. Due to the size of the filter the receptive field is also 3x3.And green area is the ouput of the repective convolution operation. Likewise we perform the convolution operation on all over the input image with kernel and then we get the output as shown in figure.</strong></p>
       <p>So sharpening and blurring will get performed by choosing appropriate kernel</p>
