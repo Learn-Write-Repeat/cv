@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Feature Detection and Description</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="keywords" content="feature detection,opencv,description">
+    <meta name="description" content="These all are the features that we find just by looking at the image. once we find this feature in this image we can find them in other images or objects. and this process is Feature Detection and after finding a feature we describe that in our own word like a black box is the sky the white box is window etc. and we search the same features in other images, basically we are describing the feature and this is called Feature Description">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">Feature Detection and Description</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Avinash Mirgal </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/avinashmirgal/"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="mailto:avi.mirgal26@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             <li><a href="https://github.com/AvinashMirgal"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Feature Detection And Description in OpenCV</h1>
+      <ul>
+<li>
+<p><strong>What is Feature Detection and Description?</strong></p>
+<p>In our Daily life we humans
+the one thing or object from another flawlessly as we don't pay the attention to it that how does this happen, It all programs in our brain already. what we do if we saw an image or object, we closely look into in and try to find a pattern to distinguish that image or object from another and it all happens in the background.</p>
+<a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Avinash%20Mirgal/bg.jpg"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Avinash%20Mirgal/bg.jpg" width="300" style="max-width:100%;height:auto;"></a>
+<p>In the above image when we look at it our brain starts to find a pattern like the black box is  sky and the white box is show the windows of the building and the red box shows the building walls
+These all are the features that we find just by looking at the image.
+once we find this feature in this image we can find them in other images or objects. and this process is <strong>Feature Detection</strong> and after finding a feature we describe that
+in our own word like a black box is the sky the white box is window etc. and we search the same features in other images, basically we are describing the feature and this is called
+<strong>Feature Description</strong>, same do by computer to describe the region around the box so that it can find that in other images and objects.</p>
+</li>
+<li>
+<p><strong>There are various algorithm we can use for Feature Detection some as follows:</strong></p>
+<ul>
+<li>
+<p>Harris Corner Detection</p>
+</li>
+<li>
+<p>Shi-Tomasi Corner Detector</p>
+</li>
+<li>
+<p>SIFT algorithm(Scale-Invariant Feature Transform)</p>
+</li>
+<li>
+<p>SURF (Speeded-Up Robust Features)</p>
+<p>SIFT is great but it is slow, so people need a faster version for Features detection so in early 2006 three people, Bay, H., Tuytelaars, T. and Van Gool, L, published the paper, which presents a new algorithm called SURF</p>
+</li>
+<li>
+<p>FAST algorithm (Features from Accelerated Segment Test)</p>
+<p>All above algorithm is useful in some or other way but they are not that much useful in the real-life application that's why this algorithm was proposed by Edward Rosten and Tom Drummond in their paper "Machine learning for high-speed corner detection" in 2006 and Later revised it in 2010.</p>
+</li>
+<li>
+<p>BRIEF (Binary Robust Independent Elementary Features)</p>
+<p>SIFT uses floating-point number so its take 512bytes dim vector for descriptors and SURF use 256bytes for descriptors and creating this vector for thousand of features its take lots of memory and it is very difficult for resource-restricted application like embedded systems larger the memory its take lots of time for matching.
+that's why BRIEF is introduced in and it is a faster method feature descriptor calculation and matching. one drawback is that it only features descriptor we need to use feature detection with this to get the final result.</p>
+</li>
+<li>
+<p>ORB(Oriented FAST and Rotated BRIEF)</p>
+<p>SIFT and SURF are good in there own way, but what if you have to pay every year to use them in your applications and that cost a lot? they are patented so we need to pay to use them. To solve that issue, OpenCV developer came up with a new free alternative to SIFT &amp; SURF, and that is ORB(Oriented FAST and Rotated BRIEF).</p>
+</li>
+</ul>
+</li>
+</ul>
+ <b>Once we learn about feature detection and description we need to know about how that feature is going to match with other images in OpenCV we have two methods to do this task as follows:</b>     
+      <ul>
+<li>
+<p>Brute-Force Matcher</p>
+<p>In this, its simply take descriptor of one feature in the first set and match with all other feature in the second set with distance calculation between them and return the closest one.</p>
+</li>
+<li>
+<p>FLANN based Matcher</p>
+<p>FLANN is Fast Library for Approximate Nearest Neighbors. it contains various algorithms to find out Nearest Neighbors and it is faster than Brute-force matcher.</p>
+</li>
+</ul>
+      <p>Get the Code Example <a style="color:blue;" href="https://github.com/AvinashMirgal/Open-contributions/blob/master/Avinash_OpenCV_Feature_Detection_and_Description.ipynb" title="Example code">Here</a></p>
+      <br>
+      
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/avinash/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
