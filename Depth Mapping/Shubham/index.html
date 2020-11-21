@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Depth Maping(OpenCV)</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="In this we are going to map the depth in image with OpenCV.
+
+This is an machine learning and image processing library. OpenCV Documentation. This is widely used, basically uses every where This library contains al">
+    <meta name="keywords" content="deptmapping,mapping,openCV">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;">Depth Maping using OpenCV</h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads <span id="visits">2513</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Shubham Rajput </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/shubham0rajput/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/_Shubham0Rajput"><i class="fab fa-twitter"></i></a></li>
+             <li><a href="mailto:srajput1912000@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             <li><a href="https://t.me/Shubham0Rajput"><i class="fab fa-telegram"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Depth Maping with OpenCV</h1> 
+      <p>In this we are going to map the depth in image with OpenCV.</p>
+      <h3>OpenCV</h3>
+      <p>This is an machine learning and image processing library. <a style="color:blue;" href="https://docs.opencv.org/master/d6/d00/tutorial_py_root.html" rel="nofollow">OpenCV Documentation</a>. This is widely used, basically uses every where
+This library contains almost all the tools required for image prosessing from importing, adjusting, changing its property or it can even work in real time. Code for OpenCV can be
+written in Python, C++, Java and can be integrated into many languges. This is one-of the best open-source tool avilable for the people in this feild and also updated on time.</p>
+      <h3>Depth Maping</h3>
+      <p>In an image each pixel has its own depth and each depth is shown by grayscale. Each depth of pixel is means the distance of surface to a viewpoint, like from place the image is taken.
+For this 2 images are required of same, those images are called <strong>stereoscopic images</strong>, Like-
+<img style="max-width:100%;height:auto;"src="assets/img/eg1.jpg" alt="img1" ></a>
+<img style="max-width:100%;height:auto;" src="assets/img/eg2.jpg" alt="img2" ></a></p>
+      
+      <p>Stereoscopic images images same but camera is moved by some cm in case of Right Image. Each different depth is of different shade in result output and can be easyly differentiable from eyes. Depth maping has same concept as human eye, we look at a common point and have 2 different prospective, same the system need 2 images to create its own
+view, with its help it differentiates between the depths.</p>
+      <h2>Step 1. Download</h2>
+      <ul>
+<li>for download with python
+<pre><code>pip install opencv-python
+</code></pre>
+</li>
+<li>for download with <a style="color:blue;" href="https://www.anaconda.com/products/individual" rel="nofollow">Anaconda</a>
+<pre><code>conda install -c conda-forge opencv
+</code></pre>
+</li>
+<li>In-case error comes try
+<pre><code>pip install pip
+</code></pre>
+this is when your pip is old. Also can use pip command in Anaconda</li>
+</ul>
+      <h2>Step 2. Copy Images</h2>
+      <p>Download and Add these images ( <a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Depth%20Mapping/Shubham/l.jpg">l.jpg</a>, <a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Depth%20Mapping/Shubham/r.jpg">r.jpg</a>) into your Google Drive.
+This is done because sometimes images are loaded in Google colab and error comes.</p>
+      <h2>Step 3. Open Code</h2>
+      <p><a style="color:blue" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Depth%20Mapping/Shubham/Shubham_OpenCV_DepthMaping.ipynb">Code</a> can be open into colab from single tap, which will
+pop-up on the top of source code.</p>
+      <h2>Step 4. Run</h2>
+      <p>To run the code tap on Run or press Alt+Enter to run, on first it will link your Google Drive with Google Colab so it can acess the images from Step 2,
+it will not harm any of your files privacy is maintained.</p>
+      <h2>Additional</h2>
+      <ul>
+<li>Your can use your own images but remember they have to be <strong>stereoscopic images</strong></li>
+<li>In-case it gives error of <strong>nonetype</strong> then system was not able to find the images</li>
+<li>In-case to bit or binary error
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">imgL</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">array</span>(<span class="pl-s1">imgL</span>, <span class="pl-s1">dtype</span><span class="pl-c1">=</span><span class="pl-s1">np</span>.<span class="pl-s1">uint8</span>)
+
+<span class="pl-s1">imgR</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">array</span>(<span class="pl-s1">imgR</span>, <span class="pl-s1">dtype</span><span class="pl-c1">=</span><span class="pl-s1">np</span>.<span class="pl-s1">uint8</span>)</pre></div>
+try making these as comment</li>
+<li>To change from grayscale to RGB
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">remove</span> <span class="pl-s">'gray'</span> <span class="pl-k">from</span> <span class="pl-s1">all</span>
+
+<span class="pl-s1">plt</span>.<span class="pl-s1">imshow</span>(<span class="pl-s1">imgL</span>,<span class="pl-s">'gray'</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">imshow</span>(<span class="pl-s1">filteredImg</span>,<span class="pl-s">'gray'</span>)</pre></div>
+</li>
+</ul>
+      <h2>Result</h2>
+      <p>Result should look like this
+<img src="assets/img/result.jpg" alt="RESULT" style="max-width:100%; height:auto;"></a></p>
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/depth/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
