@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Haar Cascade Classifiers</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="The Viola-Jones object detection framework is a machine learning approach for object detection, proposed by Paul Viola and Micheal Jones in 2001. This framework can be trained to detect almost any object, but this primarily solves the problem of face detection in real-time. This algorithm has four steps.">
+    <meta name="keywords" content="haar cascade classifiers,opencv,devincept,computer vision">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><br><strong>Haar Cascade Classifiers</strong><br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Om Rastogi </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/om-rastogi-a886b4b2/"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="https://twitter.com/OmRastogi"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="https://omrastogi.github.io/omrastogi/index.html"><i class="fa fa-globe"></i></a></li>
+            <li><a href="https://github.com/omrastogi"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://medium.com/@omrastogi"><i class="fab fa-medium"></i></a></li>
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Haar Cascade Classifiers</h1>
+      <h2>Viola Jones Algorithm</h2>
+      <p>The Viola-Jones object detection framework is a machine learning approach for object detection, proposed by Paul Viola and Micheal Jones in 2001.
+This framework can be trained to detect almost any object, but this primarily solves the problem of face detection in real-time.
+This algorithm has four steps.<br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/2b38e096e3a66eb7a800d138389a023bf91e36bb464c23505c859e60523ff6e3/68747470733a2f2f7777772e7265736561726368676174652e6e65742f70726f66696c652f50656e6f7573616c5f4d61636861646f2f7075626c69636174696f6e2f3233323539303132332f6669677572652f666967322f41533a33303033363630373236393638343240313434383632343236303831312f486161722d66656174757265732d616461707465642d66726f6d2d32302e706e67"><img src="https://camo.githubusercontent.com/2b38e096e3a66eb7a800d138389a023bf91e36bb464c23505c859e60523ff6e3/68747470733a2f2f7777772e7265736561726368676174652e6e65742f70726f66696c652f50656e6f7573616c5f4d61636861646f2f7075626c69636174696f6e2f3233323539303132332f6669677572652f666967322f41533a33303033363630373236393638343240313434383632343236303831312f486161722d66656174757265732d616461707465642d66726f6d2d32302e706e67" alt="Viola Jones" data-canonical-src="https://www.researchgate.net/profile/Penousal_Machado/publication/232590123/figure/fig2/AS:300366072696842@1448624260811/Haar-features-adapted-from-20.png" style="max-width:60%;height:auto;"></a></p>
+      <h3>1. Haar Feature Selection</h3>
+      <p>Objects are classified on very simple features as a feature to encode ad-hoc domain knowledge and operate much faster than pixel system.
+The feature is similar to haar filters, hence the name 'Haar'.
+An example of these features is a 2-rectangle feature, defined as the difference of the sum of pixels of area inside the rectangle, which can be any position and scale within the original image. 3-rectangle and 4-rectangle features are also used here. <br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/fbfe3144d3cd03c217620c6ca27bc1782a26df6e08a2bd74639a9e62c4369df5/68747470733a2f2f646f63732e6f70656e63762e6f72672f322e342f5f696d616765732f6861617266656174757265732e706e67"><img src="https://camo.githubusercontent.com/fbfe3144d3cd03c217620c6ca27bc1782a26df6e08a2bd74639a9e62c4369df5/68747470733a2f2f646f63732e6f70656e63762e6f72672f322e342f5f696d616765732f6861617266656174757265732e706e67" alt="Haar Features" data-canonical-src="https://docs.opencv.org/2.4/_images/haarfeatures.png" style="max-width:60%;height:auto"></a></p>
+      <h3>2. Integral Image Representation</h3>
+      <p>The Value of any point in an Integral Image, is the sum of all the pixels above and left of that point.
+An Integral Image can be calculated efficiently in one pass over the image.<br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/4548d76943817d3c6c15cf2f7c042e262dd4f3cba66546070488c9f47543449d/68747470733a2f2f6169736861636b2e696e2f7374617469632f696d672f7475742f696e74656772616c2d6578616d706c652d6e65772e6a7067"><img src="https://camo.githubusercontent.com/4548d76943817d3c6c15cf2f7c042e262dd4f3cba66546070488c9f47543449d/68747470733a2f2f6169736861636b2e696e2f7374617469632f696d672f7475742f696e74656772616c2d6578616d706c652d6e65772e6a7067" alt="Integral Image" data-canonical-src="https://aishack.in/static/img/tut/integral-example-new.jpg" style="max-width:60%;height:auto"></a></p>
+<h3>3. Adaboost Training</h3>   
+      <p>For a window of 24x24 pixels, there can be about 162,336 possible features that would be very expensive to evaluate.
+Hence AdaBoost algorithm is used to train the classifier with only the best features.<br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/a6fc475f1c7f1ccf2c94353281d1c862e227c50b38e75c372ab40326c7c53d2c/68747470733a2f2f692e7974696d672e636f6d2f76692f426f474e795757392d6d452f6d617872657364656661756c742e6a7067"><img src="https://camo.githubusercontent.com/a6fc475f1c7f1ccf2c94353281d1c862e227c50b38e75c372ab40326c7c53d2c/68747470733a2f2f692e7974696d672e636f6d2f76692f426f474e795757392d6d452f6d617872657364656661756c742e6a7067" alt="Boosting Algorithms" width="400" height="200" data-canonical-src="https://i.ytimg.com/vi/BoGNyWW9-mE/maxresdefault.jpg" style="max-width:60%;height:auto;"></a></p>
+      <h3>4. Cascade Classifier Architecture</h3>
+      <p>A cascade classifier refers to the concatenation of several classifiers arranged in successive order. It makes large numbers of small decisions as to whether its the object or not. The structure of the cascade classifier is of a degenerate decision tree.<br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/871e719e69655d9771c30f61b76c44a50282e60e183529171d9c894b3cb308f7/68747470733a2f2f7777772e7265736561726368676174652e6e65742f7075626c69636174696f6e2f3237373932393837352f6669677572652f666967392f41533a33323935383331383333313930343840313435353539303136323834392f436173636164652d7374727563747572652d666f722d486161722d636c6173736966696572732e706e67"><img src="https://camo.githubusercontent.com/871e719e69655d9771c30f61b76c44a50282e60e183529171d9c894b3cb308f7/68747470733a2f2f7777772e7265736561726368676174652e6e65742f7075626c69636174696f6e2f3237373932393837352f6669677572652f666967392f41533a33323935383331383333313930343840313435353539303136323834392f436173636164652d7374727563747572652d666f722d486161722d636c6173736966696572732e706e67" alt="Cascade Classifier" width="600" height="200" data-canonical-src="https://www.researchgate.net/publication/277929875/figure/fig9/AS:329583183319048@1455590162849/Cascade-structure-for-Haar-classifiers.png" style="max-width:60%;height:auto;"></a></p>
+      <h2>Application</h2>
+      <p>Despite the arrival of deep learning(RCNN, YOLO, etc), this method is still used in many applications for face and object detection, as this is very simple yet powerful.</p>
+      <br>
+      <p>Implementation in <a href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Om/Om_OpenCv_HaarCascadeClassifier.ipynb" style="color:blue;">Jupyter Notebook</a></p>
+      <h4>Reference: </h4>
+      <p><a href="https://ieeexplore.ieee.org/abstract/document/990517/" rel="nofollow" style="color:blue;"> 'Rapid Object Detection using a Boosted Cascade of Simple Features'</a>, by Paul Viola and Micheal Jones in 2001</p>
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/haar/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
