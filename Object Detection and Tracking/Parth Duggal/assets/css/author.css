@@ -1,0 +1,94 @@
+.author li {
+  list-style: none;
+  margin: 5px;
+  font-size: 1.5rem;
+  color: #081246;
+}
+
+.author ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.author li i {
+  padding: 2px;
+}
+
+.author-details h2 {
+  color: #800080;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .col-4.author {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-4.author {
+    min-width: 95%;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  footer h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 267px) {
+  .d-flex.justify-content-center.topic-title {
+    font-size: 1rem;
+  }
+}
+
+.col-8.main-content {
+  margin: 0;
+}
+
+.author li a {
+  color: #081246;
+}
+
+@media (min-width: 992px) {
+  .col-3.author {
+    padding: 8px 9px 0;
+  }
+}
+
+.col-3.author {
+  padding: 8px 15px 0;
+}
+
+@media (max-width: 768px) {
+  .col-3.author {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-9.main-content {
+    min-width: 100%;
+  }
+}
+
+.content-inner > div {
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .col-9.main-content {
+    padding: 0 5px;
+  }
+}
+
+#footer p {
+  text-align: center;
+}
+
