@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>OpenCV Basics</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="Basically, OpenCV means Open Source Computer Vision and Machine Learning Software Library. As the name suggests, OpenCV has plays a major role in the field of Computer Vision. This is a highly optimized library that has enormous scope in real-time applications. The optimized algorithms which are more than 2">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="keywords" content="haar cascade classifiers,opencv,devincept,computer vision">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>&nbsp;Basics of OpenCV</strong><br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Sathyashree </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://github.com/Sathyashreerao/Sathyashreerao/blob/master/www.linkedin.com/in/sathyashree-rao-20675018b"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="mailto:ksathyanrao@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             
+            <li><a href="https://github.com/Sathyashreerao"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>OpenCV Basics</h1>
+      <ul>
+<li>
+<p><strong>What is OpenCV?</strong></p>
+<p>Basically, OpenCV means <strong>Open Source Computer Vision and Machine Learning Software</strong> Library. As the name suggests, OpenCV has plays a major role in the field of <em>Computer Vision</em>. This is a highly optimized library that has enormous scope in <em>real-time applications</em>. The optimized algorithms which are more than 2500 in number have proved to be extremely useful in developing models of <em>Artificial Intelligence</em> and <em>Computer Vision</em>. Important aspect of OpenCV is that it's an <em>image processing</em> library that can <em>process</em> images, videos and even make use of webcams to <em>capture</em> images and videos.</p>
+</li>
+<li>
+<p><strong>OpenCV in Computer Vision:</strong></p>
+<p><strong>Computer Vision</strong> is a scientific field that helps the computer to access and process digital images and videos as if it can "<strong>see</strong>". <em>Main goal</em> of Computer Vision is to provide the computer systems the capacity to <em>interpret and understand</em> digital images and videos at a higher level and even react to what they <em>see</em>.</p>
+</li>
+<li>
+<p><strong>Images</strong>:</p>
+<p>Images are nothing but collection of <em>pixels</em>. Different values are assigned to each pixel in the image that determines its <em>color</em>. To clearly understand the concept of images, consider a <em>5X5 grid</em> that has 5 rows and 5 columns as below:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Sathyashree/5X5_empty_grid.png"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Sathyashree/5X5_empty_grid.png" style="max-width:30%;height:auto;"></a></p>
+<p>If each of the rows is numbered from 1 to 5 and each of the columns is also numbered from 1 to 5, then <strong>the color of individual blocks (i,j)</strong> where <em>i represents row number and j represents column number</em>, can be changed that makes the grid colorful. Similarly, <em>pixels</em> of the image are assigned values to determine their colors, hence resulting in the desired image.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Sathyashree/5X5_colored_grid.png"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Sathyashree/5X5_colored_grid.png" alt="Image_of_colored_grid" style="max-width:30%;height:auto;"></a></p>
+<p>The above image shows how some of the blocks are assigned the color "Green" to make the grid appear different. <strong>This simpler tactic is applied in creating and processing images</strong>. OpenCV basically processes the images by <em>acquiring the information of each pixel in the image and modifying it as per the requirement</em>. The idea behind accessing and processing videos remains the same since <em>videos are nothing but a sequence of images</em>. The quality of an image depends on the <em>resolution</em> where as quality of a video depends on the <em>number of frames per second</em>.</p>
+</li>
+<li>
+<p><strong>What is the importance of Image Processing and why OpenCV?</strong></p>
+<p>In modern technical world, with the advancement of technology, <em>digital data</em> in the form of <em>images</em> is of utmost importance as data can be <em>sent and received, stored and retrieved</em> in this format. "<strong>Encryption</strong>" is of huge interest and importance nowadays for various reasons like <strong>security and privacy</strong>. Encrypting data through images is most common. "<strong>Cryptography</strong>" aslo has widespread scope in the technical world these days. This states the importance of image processing in the modern era.</p>
+<p>Coming to image processing, OpenCV is the best library to achieve it since it allows <strong>both image and video processing</strong>. Along with these, it allows to capture shots from videos and thus, <strong>obtain images from videos</strong>. It is easily understandable which is one of the avantages for <em>beginners</em> in Computer Vision and Image Processing. OpenCV also facilitates <em>Denoising of noisy images</em> and <em>Histogram Equalization</em>.</p>
+</li>
+<li>
+<p><strong>Installation of OpenCV</strong>:
+<em>This section describes the installation process of OpenCV in the <strong>Conda environment</strong></em>. Installation of OpenCV requires execution of 2 commands in the <em>Anaconda Prompt</em>.</p>
+<ul>
+<li>
+<p><strong>Open</strong> the <em>Anaconda Prompt</em> on the system.</p>
+</li>
+<li>
+<p><strong>Execute</strong> the following commands:</p>
+<p>pip install opencv-python</p>
+<p>pip install opencv-contrib-python</p>
+</li>
+</ul>
+<p><strong>A snapshot of the installation is attached below:</strong></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Sathyashree/anaconda_prompt_opencv_installation.png"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Sathyashree/anaconda_prompt_opencv_installation.png" alt="Image_of_opencv_installation" style="max-width:100%;height:auto;"></a></p>
+<p>After the installation, for further projects, OpenCV can be imported on the IDE using the following statement:
+import cv2
+This means, in any python script that you use OpenCV for image and video processing, it is mandatory to include the above statement in order to import the OpenCV library and use it's functions.</p>
+</li>
+<li>
+<p><strong>Basic functions in OpenCV</strong>:</p>
+<ul>
+<li>
+<p><em><strong>imread()</strong></em>:</p>
+<p>Looking into the basic functions in OpenCV, the first function is the <em>imread()</em> function. This function is used to load an image to a variable that can be used for further processing.</p>
+<p><em>Syntax</em>:</p>
+<pre><code>  variable_name = cv2.imread(location_of_the_image_to_be_loaded/name_of_the_image_to_be_loaded_with_its_extension)
+</code></pre>
+<p><em>Example</em>:</p>
+<pre><code>  img = cv2.imread("/Users/Admin/Desktop/Images/my_img.png")
+</code></pre>
+<p>The above statement loads the image "<strong>my_img.png</strong>" in the path "<strong>Users/Admin/Desktop/Images</strong>" into the variable <em><strong>img</strong></em>.</p>
+</li>
+<li>
+<p><em><strong>imshow()</strong></em>:</p>
+<p>Displaying the loaded image is an important requirement to the users. To ensure that, the OpenCV library has an in-built function, imshow().</p>
+<p><em>Syntax</em>:</p>
+<pre><code> cv2.imshow(window_name , variable_name)
+</code></pre>
+<p><em><strong>OR</strong></em></p>
+<pre><code> cv2.imshow(window_name , location_of_source_image)
+</code></pre>
+<p><em>Example</em>:</p>
+<pre><code> cv2.imshow("Output_Image" , img)
+</code></pre>
+<p>The above statement displays the image that is already loaded into the "<em><strong>img</strong></em>" variable on the new window named "<strong>Output_Image</strong>".</p>
+</li>
+<li>
+<p><em><strong>Displaying multiple images</strong></em>:</p>
+<p>It is even possible to display multiple images in a single window either vertically or horizontally. This is done by importing the <em>numpy</em> library as well.</p>
+<pre><code>  import numpy as np
+</code></pre>
+<p>Steps involved in displaying multiple images is as follows:</p>
+<ul>
+<li>Load multiple images to multiple variables using imread() function.</li>
+<li>Concatenate the images horizontally or vertically using the concatenate() function from the numpy library.</li>
+<li>Display the concatenated function using imshow() function.</li>
+</ul>
+<p><strong>Syntax to concatenate 2 images</strong>:
+variable_name = np.concatenate((image_1 , image_2) , axis = 0) #Vertical Concatenation</p>
+<p><em><strong>OR</strong></em></p>
+<pre><code>  variable_name = np.concatenate((image_1 , image_name_2) , axis = 1) #Horizontal Concatenation
+</code></pre>
+<p>Axis here refers to the mode of concatenation, i.e, horizontal or vertical. The images to be concatenated are gives as a tuple argument to the concatenate() function.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>  image_concatenated1 = np.concatenate((image_1 , image_2) , axis = 1) 
+  image_concatenated2 = np.concatenate((image_1 , image_2) , axis = 0) 
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+      <h1>Contours</h1>
+      <p>Basically, <strong>Contour</strong> can be defined as an <em>outline</em> or a <em>border</em> of any object. <em>Contours</em> in Python is a <em><strong>list</strong></em> of contours of an object, which can be an image, a frame from a video and so on. Each <em>Contour</em> in the list <em>Contours</em> is a point represented as (x , y) which represent the position of the point with respect to the two axes. The contoural points usually have the same intensity.</p>
+      <h3>Uses of Contours:</h3>
+      <p>Contours are mainly <strong>used</strong> in <em><strong>Object Detection</strong></em>. Working with contours is very handy and have application in determining the size and shape of an object. Briefly stating, Contour finds its applications in anything that involves shape analysis, object detection and recognition.</p>
+      <h3>Functions that are used to find the contours in OpenCV:</h3>
+      <p>Determining contours involves multiple steps as the image needs to get ready for the process. After reading and storing the image in a variable, the image needs to be converted to either <strong>hsv</strong> or <strong>grayscale</strong> to ease the processing.</p>
+      <pre><code>variable_name = cv2.cvtColor(variable_name_that_stores_the_image , cv2.COLOR_BGR2HSV)
+</code></pre>
+      <p><em><strong>Example</strong></em>:</p>
+      <pre><code>hsv = cv2.cvtColor(image , cv2.COLOR_BGR2HSV)
+</code></pre>
+      <p>The normal format of the image is <strong>BGR</strong> which represents the order of consideration of intensities of <strong>Blue, Red</strong> and <strong>Green</strong> in the image. <strong>cv2.COLOR_BGR2HSV</strong> converts the file to <strong>hsv</strong> which basically represents the level of <strong>hue, saturation</strong> and <strong>lightness</strong>. For obtaining <strong>Grayscale</strong> image, pass cv2.COLOR_BGR2GRAY as the parameter instead of cv2.COLOR_BGR2HSV.</p>
+      <p>To find all the contoural points of the image, the syntax is as follows:</p>
+      <p>cv2.CHAIN_APPROX_NONE)</p>
+      <p>Now, the <strong>syntax</strong> is:</p>
+      <pre><code>  image , contours , hierarchy = cv2.findContours( image_variable , cv2.RETR_TREE , cv2.CHAIN_APPROX_SIMPLE)
+</code></pre>
+      <p><em><strong>Example</strong></em>:</p>
+      <pre><code>  image , contours , hierarchy = cv2.findContours( image , cv2.RETR_TREE , cv2.CHAIN_APPROX_SIMPLE)
+</code></pre>
+      <p>The function cv2.findContours() takes 3 arguments, <strong>source image, contour retrieval mode</strong>, and <strong>contour approximation method</strong> in order. The <em>contour approximation</em> can take another value also, <strong>cv2.CHAIN_APPROX_NONE</strong>, but less efficient.</p>
+      <p>To obtain all the contoural points on the image, drawing the contours is necessary. To do thid the OpenCV has the drawContours() function that draws or plots all the contoural points onto the image whose <strong>syntax</strong> is as follows:</p>
+      <pre><code>    variable_name = cv2.drawContours(image_variable , contours , -1 , (0,255,0), 3)
+</code></pre>
+      <p>This functions takes the arguments in the order of source image, the contours in the form of a list, and index of contours (to draw all contours, pass -1). (0,255,0) represents the colour of the contour, which here, is Green.</p>
+      <p><em><strong>Example</strong></em>:</p>
+      <pre><code>    image = cv2.drawContours(image , contours , -1 , (0,255,0), 3)
+</code></pre>
+      <p>To ensure that no noises are included, one can make use of the <strong>for</strong> loop to <em>iterate</em> through all the contoural points and <strong>based on a condition</strong>, the point can be chosen to be <em>plotted or discarded</em>.</p>
+      <p>To make contouring more efficient, the <strong>cv2.Canny()</strong> function comes handy to ease the process for users. This function is an <em>integrated</em> function to perform all of the following tasks:</p>
+      <ul>
+<li>Noise Reduction</li>
+<li>Finding Intensity Gradient of the image</li>
+<li>Non Maximum Suppression</li>
+<li>Hysteresis Thresholding</li>
+</ul>
+      <p>This function makes the <strong>edge detection</strong> job done for the users so that the contouring becomes easier.</p>
+      <p><strong>Syntax</strong>:</p>
+      <pre><code>    variable_name = cv2.Canny(image_variable , threshold_1 , threshold2) 
+</code></pre>
+      <p><strong>Example</strong>:</p>
+      <pre><code>    variable_name = cv2.Canny(image_variable , threshold_1 , threshold2) 
+</code></pre>
+      <p>Here, the arguments taken by the functions are <strong>source image, first threshold for the hysteresis procedure, second threshold for the hysteresis procedure</strong> and many more.</p>
+      <h3>Contouring in Video processing:</h3>
+      <p>Video is undoubtedly a <strong>series of image frames</strong>. This concept makes video processing easier, especially when using OpenCV library. <em><strong>Contouring a video is nothing but contouring the individual frames of the video</strong></em>. So, video contouring is nothing but <strong>contouring multiple images</strong>. To understand the <em>real-time application</em> of Contouring, contouring a webcam video is the best example.</p>
+      <p>To achieve this,</p>
+      <ul>
+<li>Access the webcam.</li>
+<li>Extract individual frames.</li>
+<li>Process the frames as if they are images to get the contours and draw them.</li>
+<li>Use loops wherever necessary or break statements and conditions.</li>
+</ul>
+      <h1>Shape Detection</h1>
+      <h3>Introduction:</h3>
+      <p>Basically <em><strong>Shape Detection</strong></em> is nothing but <strong>finding</strong> different shapes in an image and <strong>identifying</strong> them. Using OpenCV, computers can be made able to detect shapes in an image by feeding them with some information and applying certain conditions and allow them to act based on the decision. This process involves <em>multi-steps</em>.</p>
+      <ul>
+<li><em>Installing</em> <em><strong>pip</strong></em> and <em><strong>imutils</strong></em> <strong>packages</strong>.</li>
+<li><em>Importing</em> the necessary <strong>libraries</strong>.</li>
+<li><em>Creating</em> the <em><strong>ShapeDetector</strong></em> <strong>class</strong>.</li>
+<li><em>Loading</em> and <em>processing</em> the image and <em>finding</em> the contours.</li>
+<li><em>Finding</em> the <strong>center of each contour</strong> and detecting the shape.</li>
+<li><em>Displaying</em> the <strong>output image</strong>.</li>
+</ul>
+      <h3>Code Description:</h3>
+      <p>Now, let's dive into the actual code of the topic.</p>
+      <h4><em>Installing</em> <em><strong>pip</strong></em> and <em><strong>imutils</strong></em> <strong>packages</strong>:</h4>
+      <p>The below-stated statements enable the user to <em>install</em> <strong>pip</strong> and <strong>imutils</strong> packages in the <strong>conda environment</strong>.</p>
+      <pre><code>conda install pip
+pip install imutils
+</code></pre>
+      <h4><em>Importing</em> the necessary <strong>libraries</strong>:</h4>
+      <p>Coming to the libraries that are used in this procedure, one needs to import <strong>cv2</strong> and <strong>imutils</strong>.</p>
+      <pre><code>import cv2
+import imutils
+</code></pre>
+      <h4><em>Creating</em> the <em><strong>ShapeDetector</strong></em> <strong>class</strong>:</h4>
+      <p>The tricky part of the code starts. Let's start coding!!!</p>
+      <p>To summarize the <em><strong>ShapeDetector</strong></em> class, it is a class that we define to <em>detect</em> the shape of a <strong>Contour</strong>. The <strong>constructor</strong> has no role to play since the object of thus class <em>doesn't</em> need any <strong>initialization</strong>.</p>
+      <pre><code>class ShapeDetector:
+    def __init__(self):
+        pass
+</code></pre>
+      <p>The member function or the <em><strong>method</strong></em> <strong>detect(self , c)</strong> takes a contour as an argument, processes it to determine the shape of the contour. The shape of the contour is initially "unidentified". Then, the <strong>perimeter</strong> of the contour is calculated using the <em>cv2.arcLength()</em> function. Then, the contour is <strong>approximated</strong> using the <em>cv2.approxPolyDP()</em> function that takes the contour as the first argument and the second parameter is normally in the range of <strong>1-5%</strong> of the original perimeter of the contour. The approximation is based on the idea that a <em>series of short line segments</em> can approximate a <strong>curve</strong> and the resulting curve consists of a <strong>subset of the originally defined points</strong>. This <em>approximation</em> gives us the <strong>number of vertices</strong>.</p>
+      <pre><code>    def detect(self , c):
+        shape = "unidentified"
+        peri = cv2.arcLength(c , True)
+        approx = cv2.approxPolyDP(c , 0.04 * peri , True)
+</code></pre>
+      <p>Once the number of vertices are known, the shape identification process is easier and based on few <em>conditions</em>. The series of conditions include checking if the contour has <em>3 vertices or 4 or 5 or none</em>. <em>3</em> vertices represent that the shape is a <em>Triangle</em>; <em>4</em> vertices mean its a <em>Rectangle</em> or a <em>Square</em>; <em>5</em> means its a <em>Pentagon</em>; <em>none</em> inflicts the idea that it should be a <em>circle</em>. The <em>shape</em> of the contour is <strong>returned</strong>.</p>
+      <pre><code>        if len(approx) == 3:
+            shape = "Triangle"
+        elif len(approx) == 4:
+            (x , y , w , h) = cv2.boundingRect(approx)
+            av = w / float(h)
+            shape = "Square" if av &gt;= 0.95 and av &lt;= 1.05 else "Rectangle"
+        elif len(approx) == 5:
+            shape = "Pentagon"
+        else:
+            shape = "Circle"
+        return shape
+</code></pre>
+      <p>The idea behind determining if the shape is a square or a rectangle is that the <strong>ratio</strong> of the <em>width to the height</em> of a <strong>square</strong> is <strong>approximately equal to 1</strong>. An <strong>approximated rectangle</strong> is drawn around the contoural points using the <em>cv2.boundingRect()</em> function and then, the <em>ratio</em> of the width to the height is found out.  If the value of the <em>ratio falls around 1</em>, then the shape is a <em>Square</em>, else a <em>Rectangle</em>.</p>
+      <h4><em>Loading</em> and <em>processing</em> the image and <em>finding</em> the contours:</h4>
+      <p>After the class definition is <em>done</em>, image <strong>loading and processing</strong> is required to utilize the function that is already defined. The image which contains different shapes is <strong>read and loaded to a variable</strong>. To ease the process of shape detection, the image needs a little processing to make the process of finding contours easier that makes a few steps. Fiest, the image is resized using the imutils.resize() function to enable <em>better approximation</em> of the contours. In future process, the factor by which the iamge is resized is of importance, because of which the ratio is found out and stored in a variable.</p>
+      <pre><code>image = cv2.imread('shapes_and_colors.jpg')
+resized = imutils.resize(image, width=300)
+ratio = image.shape[0] / float(resized.shape[0])
+</code></pre>
+      <p>The resized image is then <strong>converted</strong> into <strong>Grayscale</strong> by using <em>cv2.cvtColor()</em> function. Then the Grayscaled image is <strong>blurred</strong> using <em>cv2.GaussianBlur()</em> function and at last <strong>thresholded</strong>. Thresholding is basically assigning the pixel values in relation to the threshold value provided where each pixel value is compared with the threshold value. This is done using the <em>cv2.threshold()</em> function. These are the basic processes involved before finding the contours of an image.</p>
+      <pre><code>gray = cv2.cvtColor(resized , cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray , (5 , 5) , 0)
+thresh = cv2.threshold(blurred , 60 , 255 , cv2.THRESH_BINARY)[1]
+</code></pre>
+      <p>After the image is ready, the thresholded copy is used to <strong>find the contours</strong> using the <em>cv2.findContours()</em> function and <em>imutils.grab_contours()</em> function. After this, an <em>object</em> for the ShapeDetector class is <strong>created</strong>.</p>
+      <pre><code>cnts = cv2.findContours(thresh.copy() , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_SIMPLE)
+cnts = imutils.grab_contours(cnts)
+sd = ShapeDetector()
+</code></pre>
+      <h4><em>Finding</em> the <strong>center of each contour</strong> and detecting the shape:</h4>
+      <p>This phase needs the script to <strong>iterate</strong> through all the contours obtained. Each contour undergoes a series of statements, first one being the <em>finding of the <strong>moments</strong></em>. Image moment is a <em>weighted average</em> of the <strong>image pixels' intensities</strong>, usually chosen to have some <em>attractive property</em> or <em>interpretation</em>. Then, the <em>x</em> and <em>y</em> co-ordinates of the <strong>center of the contour</strong> is calculated. This basically is finding the <strong>centroid</strong> of the contour. The center is identified to enable <strong>naming</strong> the shape in the later part of the code.</p>
+      <pre><code>for c in cnts:
+    M = cv2.moments(c)
+    cX = int((M["m10"] / M["m00"]) * ratio)
+    cY = int((M["m01"] / M["m00"]) * ratio)
+</code></pre>
+      <p>Using the contour, the <em>shape</em> of the contour is obtained by calling <strong>detect()</strong> method defined in the <strong>ShapeDetector</strong> class on the object previously created. The contour value undergoes few changes like <em>conversion</em> to <strong>float</strong>, <em>multiplication</em> by the <strong>ratio</strong> to <em>find</em> the <strong>actual position</strong> of the respective contour in the <em>original image</em> and <em>conversion</em> to <strong>int</strong>.</p>
+      <pre><code>    shape = sd.detect(c)
+    c = c.astype("float")
+    c *= ratio
+    c = c.astype("int")
+</code></pre>
+      <p>Now, <em>draw</em> the <strong>contour</strong> of the shape on the <em><strong>original image</strong></em> and <em>name</em> the <strong>shape</strong>. This is just a 2 line code and uses simple functions like <strong>cv2.drawContours()</strong> and <strong>cv2.putText()</strong>.</p>
+      <pre><code>    cv2.drawContours(image , [c] , -1 , (0 , 255 , 0) , 2)
+    cv2.putText(image , shape , (cX , cY) , cv2.FONT_HERSHEY_SIMPLEX , 0.5 , (255 , 255 , 255) , 2)
+</code></pre>
+      <h4><em>Displaying</em> the <strong>output image</strong>:</h4>
+      <p>This is the <em>final</em> step for a contour that has been <em>drawn</em> and <em>named</em> with its shape in the <strong>current loop</strong>. The contour on the image that has been identified and marked is <em>displayed</em>. This uses the simple <em>cv2.imshow()</em> function.</p>
+      <pre><code>    cv2.imshow("Image", image)
+    cv2.waitKey(0)
+</code></pre>
+      <p>This is the end of the code.</p>
+      <p>Note:</p>
+      <ul>
+<li><em>Finding</em> the <strong>center of each contour</strong> and detecting the shape.</li>
+<li><em>Displaying</em> the <strong>output image</strong>.</li>
+</ul>
+      <p>These are the <em>2 phases</em> that <strong>repeat on loop</strong> for the contours. These steps work for each contour in the contours' list and repeat until <em>all the contours</em> are <strong>marked, identified and displayed</strong> on the window. After all the shapes are detected and displayed, the user can close the window.</p>
+      <p>Consider the following <em>image</em>:</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Sathyashree/shapes_and_colors.jpg"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Sathyashree/shapes_and_colors.jpg" alt="Image" style="max-width:50%;height:auto;"></a></p>
+      <p>After detecting the shapes of all contours, the <em>output image</em> is:</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/Sathyashree/sandcoutput.gif"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Object%20Detection%20and%20Tracking/Sathyashree/sandcoutput.gif" alt="Image2" style="max-width:50%;height:auto;"></a></p>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/basics/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
