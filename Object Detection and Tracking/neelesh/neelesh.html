@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Basics of OpenCV</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="OpenCV is the huge open-source library for computer vision, machine learning, and image processing and now it plays a major role in real-time operation which is very important in today’s systems. By using it, one can process images and videos to identify objects, faces, or even the handwriting of a human.">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="keywords" content="openCV,basics,devincept,codes">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>&nbsp;Basics of OpenCV</strong><br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Neelesh Tiwari </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/neelesh-t-3a7599a2/"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="mailto:tiwnilesh022@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             
+            <li><a href="https://github.com/tiwnilesh022"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Introduction to OpenCV</h1>
+      <p>OpenCV is the huge open-source library for computer vision, machine learning, and image processing and now it plays a major role in real-time operation which is very important in today’s systems. By using it, one can process images and videos to identify objects, faces, or even the handwriting of a human.</p>
+      <p>OpenCV is one of the most popular computer vision libraries. If you want to start your journey in the field of computer vision, then a thorough understanding of the concepts of OpenCV is of paramount importance.
+We will cover the following topics:</p>
+      <ul>
+<li>Reading an image</li>
+<li>Extracting the RGB values of a pixel</li>
+<li>Extracting the Region of Interest (ROI)</li>
+<li>Resizing the Image</li>
+<li>Rotating the Image</li>
+<li>Drawing a Rectangle</li>
+<li>Displaying text</li>
+</ul>
+      <h3>Reading an image</h3>
+      <p>Use the below mentioned code to import and use OpenCv</p>
+      <pre><code>import cv2</code></pre>
+      <b>Reading the image using imread() function</b>
+      <pre><code>image = cv2.imread('image.png')</code></pre>
+      <b>Extracting the height and width of an image</b>
+      <pre><code>h, w = image.shape[:2]</code>
+      </pre>
+      <b>Displaying the height and width</b>
+      <pre><code>print("Height = {}, Width = {}".format(h, w))</code></pre>
+      <p>Now we will focus on extracting the RGB values of an individual pixel.
+Note – OpenCV arranges the channels in BGR order. So the 0th value will correspond to Blue pixel and not Red.</p>
+      <h3>Extracting the RGB values of a pixel</h3>
+      <ul>
+<li>
+<p>Extracting RGB values.</p>
+</li>
+<li>
+<p>Here we have randomly chosen a pixel</p>
+</li>
+<li>
+<p>by passing in 100, 100 for height and width.
+(B, G, R) = image[100, 100]</p>
+</li>
+<li>
+<p>Displaying the pixel values
+print("R = {}, G = {}, B = {}".format(R, G, B))</p>
+</li>
+<li>
+<p>We can also pass the channel to extract</p>
+</li>
+<li>
+<p>the value for a specific channel
+B = image[100, 100, 0]
+print("B = {}".format(B))</p>
+</li>
+</ul>
+      <h3>Extracting the Region of Interest (ROI)</h3>
+      <ul>
+<li>We will calculate the region of interest</li>
+<li>by slicing the pixels of the image
+roi = image[100 : 500, 200 : 700]</li>
+</ul>
+      <h3>Resizing the Image</h3>
+      <ul>
+<li>resize() function takes 2 parameters,</li>
+<li>the image and the dimensions
+resize = cv2.resize(image, (800, 800))</li>
+</ul>
+      <h3>Calculating the ratio</h3>
+      <p>ratio = 800 / w</p>
+      <h3>Creating a tuple containing width and height</h3>
+      <p>dim = (800, int(h * ratio))</p>
+      <h3>Resizing the image</h3>
+      <p>resize_aspect = cv2.resize(image, dim)</p>
+      <h3>Rotating the Image</h3>
+      <ul>
+<li>
+<p>Calculating the center of the image
+center = (w // 2, h // 2)</p>
+</li>
+<li>
+<p>Generating a rotation matrix
+matrix = cv2.getRotationMatrix2D(center, -45, 1.0)</p>
+</li>
+<li>
+<p>Performing the affine transformation
+rotated = cv2.warpAffine(image, matrix, (w, h))</p>
+</li>
+</ul>
+      <p>There are a lot of steps involved in rotating an image. So, let me explain each of them in detail.</p>
+      <p>The 2 main functions used here are –</p>
+      <pre><code>getRotationMatrix2D()
+warpAffine()
+</code></pre>
+      <p>getRotationMatrix2D()
+It takes 3 arguments –</p>
+      <pre><code>center – The center coordinates of the image
+Angle – The angle (in degrees) by which the image should be rotated
+Scale – The scaling factor
+
+ 
+It returns a 2*3 matrix consisting of values derived from alpha and beta
+alpha = scale * cos(angle)
+beta = scale * sine(angle)
+
+Rotation Matrix
+
+warpAffine()
+
+The function warpAffine transforms the source image using the rotation matrix:
+
+dst(x, y) = src(M11X + M12Y + M13, M21X + M22Y + M23)
+
+Here M is the rotation matrix, described above.
+It calculates new x, y co-ordinates of the image and transforms it.
+</code></pre>
+      <h2>Drawing a Rectangle</h2>
+      <p>It is an in-place operation.</p>
+      <ul>
+<li>
+<p>We are copying the original image,</p>
+</li>
+<li>
+<p>as it is an in-place operation.
+output = image.copy()</p>
+</li>
+<li>
+<p>Using the rectangle() function to create a rectangle.
+rectangle = cv2.rectangle(output, (1500, 900), (600, 400), (255, 0, 0), 2)</p>
+</li>
+</ul>
+      <p>It takes in 5 arguments –</p>
+      <ul>
+<li>Image</li>
+<li>Top-left corner co-ordinates</li>
+<li>Bottom-right corner co-ordinates</li>
+<li>Color (in BGR format)</li>
+<li>Line width</li>
+</ul>
+      <h2>Displaying text</h2>
+      <p>It is also an in-place operation</p>
+      <ul>
+<li>
+<p>Copying the original image
+output = image.copy()</p>
+</li>
+<li>
+<p>Adding the text using putText() function
+text = cv2.putText(output, 'OpenCV Demo', (500, 550), cv2.FONT_HERSHEY_SIMPLEX, 4, (255, 0, 0), 2)</p>
+</li>
+</ul>
+      <p>It takes in 7 arguments –</p>
+      <ul>
+<li>Image</li>
+<li>Text to be displayed</li>
+<li>Bottom-left corner co-ordinates, from where the text should start</li>
+<li>Font</li>
+<li>Font size</li>
+<li>Color (BGR format)</li>
+<li>Line width</li>
+</ul>
+      <h1>Object Detection</h1>
+      <p>Object Detection is a computer technology related to computer vision, image processing, and deep learning that deals with detecting instances of objects in images and videos
+By applying object detection, you’ll not only be able to determine what is in an image, but also where a given object resides!
+In this section we will understand a variety of object detection methods:</p>
+      <h3>Template Matching</h3>
+      <ul>
+<li>Simply looking for an exact copy of an image in another larger image.</li>
+<li>It simply scans a larger image for a provided template by sliding the template target image  across the larger image.</li>
+<li>The main option that can be adjusted is the comparison method used as the target template is slid across the larger image.</li>
+<li>The methods are all some source of correlation base metric.</li>
+<li>So we can see the different methods that opencv has available
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/ae68812b2ffef14b2d066fbbcb6debadb90faad1b09594ecc66f8a38023a5faf/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3730302f312a5667687763424f5836326c7534487a52483846494d672e706e67"><img src="https://camo.githubusercontent.com/ae68812b2ffef14b2d066fbbcb6debadb90faad1b09594ecc66f8a38023a5faf/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3730302f312a5667687763424f5836326c7534487a52483846494d672e706e67" alt="" data-canonical-src="https://miro.medium.com/max/700/1*VghwcBOX62lu4HzRH8FIMg.png" style="max-width:100%;height:auto;"></a></li>
+</ul>
+      <h3>Corner Detection</h3>
+      <ul>
+<li>A corner is a point whose local neighbourhood stands in two dominant and different edge directions.</li>
+<li>Or simply a corner can be interpreted as the junction of two edges or an edge is a sudden change in brightness.</li>
+<li>There are various corner detection algorithms</li>
+<li>We will take look at some of the most popular algorithms:
+<ul>
+<li>Harris Corner Detection</li>
+<li>Shi-Tomasi Corner Detection</li>
+</ul>
+</li>
+<li>Harris Corner Detection
+<ul>
+<li>Published in 1988 by Chris Harris and Mike Stephens.</li>
+<li>The basic intuition is that corners can be detected by looking for significant change in all directions.
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/f65f0b7ca5fba50f76ed13cd51cb4c879328a8a0d9cb83d4e56ab7e3bd4db2a4/68747470733a2f2f6d65646961352e646174616861636b65722e72732f323031392f30372f3133302d31303234783630382e706e67"><img src="https://camo.githubusercontent.com/f65f0b7ca5fba50f76ed13cd51cb4c879328a8a0d9cb83d4e56ab7e3bd4db2a4/68747470733a2f2f6d65646961352e646174616861636b65722e72732f323031392f30372f3133302d31303234783630382e706e67" alt="" data-canonical-src="https://media5.datahacker.rs/2019/07/130-1024x608.png" style="max-width:100%;"></a></li>
+</ul>
+</li>
+<li>Shi-Tomasi Corner Detection
+<ul>
+<li>Published in 1994 by J. Shi and C. Tomasi in their paper <em>Good Features to Track</em>.</li>
+<li>It made a small change to the Harris Corner Detector which ended up with better results</li>
+<li>It changes the scoring function selection criteria that Harris uses for corner detection.
+<ul>
+<li>Harris Corner Detection uses:
+<ul>
+<li><strong>R =  λ1λ2 – k( λ1  + λ2)</strong></li>
+</ul>
+</li>
+<li>Shi-Tomasi uses:
+<ul>
+<li><strong>R = min(λ1, λ2)</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+      <h3>Edge Detection</h3>
+      <ul>
+<li>Expanding to find general edges of objects</li>
+<li>Canny Edge Detection Method
+<ol>
+<li>Apply Gaussian filter to smooth the image in order to remove the noise.</li>
+<li>Find the intensity gradients of the image.</li>
+<li>Apply non-maximum suppression to get rid of spurious response to edge detection.</li>
+<li>Apply double threshold to determine possible edges.</li>
+<li>Track edge by hysteresis: Finalize the detection of edges by supressing all other edges that are weak and not connected to strong edges.</li>
+</ol>
+</li>
+</ul>
+      <h3>Grid Detection</h3>
+      <ul>
+<li>Combining both concepts to find grid in images (useful for applications).</li>
+<li>Often cameras can create distortion in an image such as radial distortion and tangential distortion</li>
+<li>A good way to account for these distortions when performing like object tracking is to have a recognizable pattern attached to the object being tracked.</li>
+<li>Grid patterns are often used to calibrate cameras and track motion.</li>
+</ul>
+      <h3>Contour Detection</h3>
+      <ul>
+<li>Contours are defined simply as a curve joining all the continuous points having same colour or intensity.</li>
+<li>Contours are a useful tool for shape analysis and object detection and recognition</li>
+<li>OpenCV has a built in Counter finder function that can also help us differentiate between internal and external contours (eg – grabbing the eyes and smile from a cartoon face).</li>
+<li>Allows us to detect foreground vs background.</li>
+</ul>
+      <h3>Feature Matching</h3>
+      <ul>
+<li>Feature matching extracts defining key features from an input image (using ideas from corner, edge and contour detection).</li>
+<li>Then using a distance calculation, finds all the matches in a secondary image.</li>
+<li>More advanced methods of detecting matching object in another image, even if the target image is not shown exactly the same image we are searching.</li>
+<li>Feature Matching results:</li>
+</ul>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/ff6dd6ea4c4bc32763aa35f5994e63605f1a88d39853c17e2c9858dfa050cff7/68747470733a2f2f646f63732e6f70656e63762e6f72672f332e342f6d6174636865725f726573756c74312e6a7067"><img src="https://camo.githubusercontent.com/ff6dd6ea4c4bc32763aa35f5994e63605f1a88d39853c17e2c9858dfa050cff7/68747470733a2f2f646f63732e6f70656e63762e6f72672f332e342f6d6174636865725f726573756c74312e6a7067" alt="" data-canonical-src="https://docs.opencv.org/3.4/matcher_result1.jpg" style="max-width:100%;"></a></p>
+      <ul>
+<li>Notice how the input image is not exactly what is shown in the secondary image</li>
+<li>3 methods of feature matching are:
+<ol>
+<li>Brute-Force Matching with ORB Descriptors</li>
+<li>Brute-Force Matching with SIFT Descriptors and Ratio Test</li>
+<li>FLANN based Matcher</li>
+</ol>
+</li>
+</ul>
+      <h3>Watershed Algorithm</h3>
+      <ul>
+<li>
+<p>Metaphorically, Watershed Algorithm transformation treats the image it operates upon like a topographic map, with the brightness of each point representing it’s height, and finds the line that runs along the tops of ridges.</p>
+</li>
+<li>
+<p>Any grayscale image  can be viewed as a topographic surface where high intensity denotes peaks and hills while low intensity denotes valleys</p>
+</li>
+<li>
+<p>As the “water” rises, depending on the peaks (gradient) nearby, “water” from different valleys (different segments of the image), with different colors could start merge.</p>
+</li>
+<li>
+<p>To avoid this merging, the algorithm creates barrier (segment edge boundaries) in locations where “water” merges.</p>
+</li>
+<li>
+<p>The algorithm can then fill every isolated valley(local minima) with different colored water(labels).</p>
+</li>
+<li>
+<p>Advances algorithm that allows us to segment images into foreground and background</p>
+</li>
+<li>
+<p>Also allows us to manually set seeds to choose segments of an image.</p>
+<ul>
+<li>A common example is the use of coins next to each other on a table
+<ul>
+<li>Attempting to segment these coins can be difficult:</li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/ec3b6bae92cd05aff5b6729f88d230bbae293f97ee8dc7fd05f8decc775b27e7/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e253341414e6439476351524c474c786a4b3266414478346537536369386b6f426b6542304c682d51747141646726757371703d434155"><img src="https://camo.githubusercontent.com/ec3b6bae92cd05aff5b6729f88d230bbae293f97ee8dc7fd05f8decc775b27e7/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e253341414e6439476351524c474c786a4b3266414478346537536369386b6f426b6542304c682d51747141646726757371703d434155" alt="" data-canonical-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRLGLxjK2fADx4e7Sci8koBkeB0Lh-QtqAdg&amp;usqp=CAU" style="max-width:50%;"></a>\</p>
+<ul>
+<li>It may be unclear to the algorithm  if it should be treated as one large object or many small objects.</li>
+<li>The watershed algorithm can be very effective  for these sort of problems</li>
+</ul>
+</li>
+</ul>
+      <h3>Facial and Eye Detection</h3>
+      <ul>
+<li>Haar Cascades to identify faces in images</li>
+<li>We will be able to very quickly detect if a face is in an image and locate</li>
+<li>However we won’t know who’s face it belongs to.</li>
+<li>We would need a really large dataset and deep learning for facial recognition.</li>
+<li>Main feature types:</li>
+</ul>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/5fa82ea2e5e8d304c81959ac92db76e87775678c1c0706068329bf0ac707bef2/68747470733a2f2f646f63732e6f70656e63762e6f72672f332e342f686161725f66656174757265732e6a7067"><img src="https://camo.githubusercontent.com/5fa82ea2e5e8d304c81959ac92db76e87775678c1c0706068329bf0ac707bef2/68747470733a2f2f646f63732e6f70656e63762e6f72672f332e342f686161725f66656174757265732e6a7067" alt="" data-canonical-src="https://docs.opencv.org/3.4/haar_features.jpg" style="max-width:50%;"></a></p>
+      <ul>
+<li>Each feature is a single value obtained by subtracting sum of pixels under white rectangle from sum of pixels under black rectangle.</li>
+<li>Realistically, our images won’t be perfect lines and edges.</li>
+<li>These features are calculated by:
+<ul>
+<li><strong>mean(dark region) – mean(light region)</strong></li>
+</ul>
+</li>
+<li>A perfect edge would result in a value of one.</li>
+<li>The closer the result is to one, the better the feature.</li>
+<li>The Voila-Jones algorithm solves this by using the integral image.</li>
+<li>Resulting in an O(1) running time of the algorithm</li>
+<li>The algo also saves time by going through a cascade of classifiers.</li>
+<li>This means we will treat the image to a series(cascade)of classifiers based on the simple feature .</li>
+<li>Once an image fails a classifier, we can stop attempting to detect a face.</li>
+</ul>
+      <br>
+      <h2 style="color:black;" >Implementation in Jupyter Notebooks</h2>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Connecting-to-Camera_for_video_input.ipynb">Connecting to Camera for video input</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Image_processing_opencv.ipynb">Image processing</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Images-and-NumPy%20image%20editing_opencv.ipynb">Numpy Image editing</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Opening-Image-Files-in-a-Notebook%20rotating%20croping%20and%20convertiong%20it%20into%20graysacle_opencv%20.ipynb">Open Image files</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/image_basics_withopencv.ipynb">Image Basics with OpenCV</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Opening-Images-with_OpenCV.ipynb">Opening Images</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Template-Matching_opencv.ipynb">Template Matching</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Using-Video-Files_opencv.ipynb">Using video files</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Video-Basic_opencv.ipynb">Video Basics</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/Watershed-Algorithm_opencv.ipynb">Watershed Algorithm</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/blendandpaste.ipynb">Blend and Paste</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/blurringandsmooth.ipynb">Blurring and Smoothing</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/color_mappings.ipynb">Color Mapping</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/contourdetection.ipynb">Contour Detection</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/cornerdetection.ipynb">Corner Detection</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/edge_detection.ipynb">Edge Detection</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/customseedwith_watershedalgo.ipynb">Custom Seed with Watershed algorithm</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/example_numberplate.ipynb">Numberplate Example</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/face_detection_opencv.ipynb">Face Detection</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/feature_matching.ipynb">Feature Matching</a></p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Object%20Detection%20and%20Tracking/neelesh/grid_detection.ipynb">Grid Detection</a></p>
+      
+      
+      
+      
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/neelesh/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
