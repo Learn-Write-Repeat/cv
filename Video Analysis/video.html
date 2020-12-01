@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Video Analysis</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="We Will Be Covering:
+Installing OpenCV
+
+How to load/read video from a live stream and video file
+
+Displaying video on Screen
+
+How to save per frame images in the directory
+
+How to save video in the directory
+
+How to convert coloured video into - Gray-Scale
+
+Background Substraction
+
+Mean shift
+
+Camshift
+
+Optical Flow
+
+Sparse Optical Flow">
+    <meta name="keywords" content="video analysis,opencv,devincept,computer vision">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>&nbsp;Video Analysis Using OpenCV</strong></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Kumari Neha </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/kumarineha2404"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="mailto:kumarineha24004@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             
+            <li><a href="http://www.github.com/neha2426"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Video Analysis Using OpenCV</h1>
+      <h3>We Will Be Covering:</h3>
+      <ul>
+<li>
+<p>Installing OpenCV</p>
+</li>
+<li>
+<p>How to load/read video from a live stream and video file</p>
+</li>
+<li>
+<p>Displaying video on Screen</p>
+</li>
+<li>
+<p>How to save per frame images in the directory</p>
+</li>
+<li>
+<p>How to save video in the directory</p>
+</li>
+<li>
+<p>How to convert coloured video into - Gray-Scale</p>
+</li>
+<li>
+<p>Background Substraction</p>
+</li>
+<li>
+<p>Mean shift</p>
+</li>
+<li>
+<p>Camshift</p>
+</li>
+<li>
+<p>Optical Flow</p>
+<ul>
+<li>
+<p>Sparse Optical Flow</p>
+</li>
+<li>
+<p>Dense Optical Flow</p>
+</li>
+</ul>
+</li>
+</ul>
+      <h3>Required Modules:</h3>
+      <ul>
+<li>cv2</li>
+<li>numpy</li>
+</ul>
+      <h3>Basics of Video Analysis-</h3>
+      <p>Here we will cover basic actions like</p>
+      <ul>
+<li>Read file</li>
+<li>write file</li>
+<li>save file</li>
+<li>display file</li>
+<li>converting frame from color-scale to gray-scale</li>
+</ul>
+      <h1>Background Substraction</h1>
+      <p>Here we will learn how Background subtraction is done. This technique used for separating out foreground elements from the background and is done by generating a foreground mask.
+This technique is used for detecting dynamically moving objects from static cameras</p>
+      <h4>Applications-</h4>
+      <ul>
+<li>object tracking</li>
+</ul>
+      <h1>Mean shift</h1>
+      <p>Mean shift is a non-parametric feature-space analysis technique for locating the maxima of a density function.</p>
+      <h4>Application :</h4>
+      <ul>
+<li>cluster analysis in computer vision</li>
+<li>image processing</li>
+</ul>
+      <h4>Disadvantage:</h4>
+      <ul>
+<li>The selection of a window size is not trivial.</li>
+<li>Inappropriate window size can cause modes to be merged, or generate additional “shallow” modes.</li>
+<li>Often requires using adaptive window size.</li>
+</ul>
+      <h1>Camshift</h1>
+      <p>Continuously adaptive mean-shift(CAMShift) is an efficient and light-weight tracking algorithm developed based on mean-shift. While color based CAMShift is suitable for tracking targets in simple cases.</p>
+      <h4>Advantage:</h4>
+      <ul>
+<li>object tracking</li>
+<li>Camshift algorithms also used for security, vehicle navigation, surveillance cameras, car driver assistants, biometrics, video games, and industrial automation.</li>
+</ul>
+      <h4>Disadvantage:</h4>
+      <ul>
+<li>fails to track objects in more complex situations.</li>
+</ul>
+    <h1>Optical Flow</h1>  
+      <p>Optical flow or optic flow is the pattern of apparent motion of objects, surfaces, and edges in a visual scene caused by the relative motion between an observer and a scene.Optical flow can also be defined as the distribution of apparent velocities of movement of brightness pattern in an image.</p>
+      <h4>TYPES-</h4>
+      <ul>
+<li>
+<p>Sparse Optical Flow</p>
+</li>
+<li>
+<p>Dense Optical Flow</p>
+</li>
+</ul>
+   <h4>Advantage:</h4>   
+      <p>Optical flow allows for the estimation of depth information relative to the speed and direction of the linear velocity, and rotational velocity for each of the axes in 3D.</p>
+      
+      <p>Implementation in <a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Video%20Analysis/vidanalysis.ipynb">Jupyter Notebook</a></p>
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/video/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
