@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Face and Eye Detection</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="In this session,
+
+We will see what is Haar classifier.
+We will see programming on face and eye detection.">
+    <meta name="keywords" content="face and eye detection,opencv,devincept,computer vision">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>&nbsp;</strong>Face and Eye detection with OpenCV<br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Kavya </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            
+            
+             <li><a href="mailto:kavyadheerendra@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             
+            <li><a href="https://github.com/kavyad14"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Basics of OpenCV</h1>
+      <ul>
+<li>
+<p><em>What is OpenCV</em>?</p>
+<p>OpenCV(<em>Open Source Computer Vision and Machine Learning Software</em>)is an open source library which processes images and videos to identify objects, faces, detecting colours etc.It has wide applications in <strong>Computer Vision,Machine Learning</strong> and <em>Image Processing</em>. It also supports variety of programming languages like <strong>Python</strong>, <strong>C++</strong>, <strong>C</strong>. Basically it a library for processing <strong>images</strong>.</p>
+<p><strong>OpenCV in Artificial Intelligence</strong></p>
+<p><em>Computer Vision</em> is a branch of <em>Artificial Intelligence</em> which trains the computer to extract information from digital data like images and videos, understand them and even communicate.</p>
+<p><em>Why OpenCV?</em></p>
+<p>Nowadays image processing and computer vision have gained importance in every field. As Opencv has over 2500 optimized algorithms which ease image processsing and even helps in building projects like tracking movements, recognizing faces, finding similar images etc.,it makes programming easier.Reading and displaying images is simplified and through OpenCV development of programs from simpler to complex is easier.</p>
+<p><em>Application of OpenCV</em></p>
+<ul>
+<li>
+<p>Image enchancement.</p>
+</li>
+<li>
+<p>Rotating,Cropping,Resizing(using more advanced features)</p>
+</li>
+<li>
+<p>Background removal.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Images</em></p>
+<p>Image is collection of <em>pixels</em> and it is a binary representation of visual information such as logos, drawing pictures, graphs etc.</p>
+</li>
+<li>
+<p><em>Black and white image</em></p>
+<p>The image which has only two colours i.e <em>Black</em> <strong>and</strong> <strong>white</strong> is called <em>Binary image</em>.
+For a basic black and white image there is only one bit representation where <em>0</em> represents <strong>black</strong> and <em>1</em> represents <strong>white</strong>.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/835355904599c4f8561aee2933d9c4b996b8c09b6b01b39952b6930ab2fa16ad/68747470733a2f2f692e70696e696d672e636f6d2f323336782f31332f62632f65322f31336263653232366661306433376230646463613365663039303435643334642d2d6d6f6e6f6368726f6d652d70686f746f6772617068792d626c61636b2d77686974652d70686f746f6772617068792e6a7067"><img src="https://camo.githubusercontent.com/835355904599c4f8561aee2933d9c4b996b8c09b6b01b39952b6930ab2fa16ad/68747470733a2f2f692e70696e696d672e636f6d2f323336782f31332f62632f65322f31336263653232366661306433376230646463613365663039303435643334642d2d6d6f6e6f6368726f6d652d70686f746f6772617068792d626c61636b2d77686974652d70686f746f6772617068792e6a7067" alt="image" data-canonical-src="https://i.pinimg.com/236x/13/bc/e2/13bce226fa0d37b0ddca3ef09045d34d--monochrome-photography-black-white-photography.jpg" style="max-width:40%;height:auto;"></a></p>
+</li>
+<li>
+<p><em>Gray Scale Image</em></p>
+<p>One can have images of more than two levels i.e instead of having only 0 and 1 bit levels each pixel can have range of values i.e 2^8,this will give us resolution of 256 levels where 0 will be <em>black</em> and 255 will be <em>white</em>. So basically we have 254 colours between <em>black</em> and <em>white</em>.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/6536620b7193fa285f761633f06f47f1d9d2d3e081505d31adc3b859d030d470/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f42324442792e6a7067"><img src="https://camo.githubusercontent.com/6536620b7193fa285f761633f06f47f1d9d2d3e081505d31adc3b859d030d470/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f42324442792e6a7067" alt="image" data-canonical-src="https://i.stack.imgur.com/B2DBy.jpg" style="max-width:40%;height:auto;"></a></p>
+</li>
+<li>
+<p><em>Coloured image</em></p>
+<p>For coloured images each pixel can have levels of <em>red,green,blue</em>. Different levels of red, green and blue give different colours to the respective pixels giving out a fully coloured image.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/Learn-Write-Repeat/cv/blob/main/Face%20detection/Kavya/original.jpg"><img src="https://raw.githubusercontent.com/Learn-Write-Repeat/cv/main/Face%20detection/Kavya/original.jpg" alt="image" style="max-width:40%;height:auto;"></a></p>
+</li>
+<li>
+<p><em>Installation of OpenCV</em></p>
+<p>Installation of OpenCV has two steps to be followed through <em>Anaconda Prompt</em>.</p>
+<ul>
+<li>
+<p>Open <em>Anaconda Prompt</em></p>
+</li>
+<li>
+<p>Execute the following commands:</p>
+<pre><code>pip install opencv-python
+
+pip install opencv-contrib-python
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+    <p>After installing the Opencv package on anaconda prompt, for further usage of OpenCV in image and video processing through python IDE, it is necessary to import OpenCV library and it's functions using <em>import cv2</em> statement.</p>
+      <ul>
+<li>
+<p><em>Basic functions in OpenCV</em></p>
+<ul>
+<li>
+<p><em>imread()</em>:
+In order to read or store image in a variable imread() function is used.</p>
+<p>A variable is initialized to read an image, using the function imread() in cv2 package we store the image.</p>
+<p>syntax:</p>
+<pre><code>  variable_name = cv2.imread(specify_the_path_in_which_image_should_be_read_with_extensions)
+</code></pre>
+<p>Example:</p>
+<pre><code>   img1 = cv2.imread("extras/nature.jpeg")
+</code></pre>
+</li>
+<li>
+<p><em>imshow()</em>:
+This function is used to display the image from the variable where the image is stored. Window name represents the name of the window on which the image is to be displayed.</p>
+<p>syntax:</p>
+<pre><code>    cv2.imshow(window_name,variable_name)
+</code></pre>
+<p>Example:</p>
+<pre><code>    cv2.imshow("Output",img1)
+</code></pre>
+</li>
+<li>
+<p><em>videocapture()</em>:
+This function is used to import a video.</p>
+<pre><code>  - steps to import a video
+  
+     - Initialize a variable to store the imported video.
+     
+     - Using an infinite while loop and read() function, read the frames.
+     
+     - Use imshow() function to display the video.
+</code></pre>
+<p>Example:</p>
+<pre><code> cap=cv2.videocapture("specify_the_path_in_which_video_should_be_read_with_extensions")
+ 
+  while true:
+  
+      success,img=cap.read()
+      
+      cv2.imshow("video",img)
+      
+      if cv2.waitKey(1)&amp; 0xFF=ord('q'):
+      
+          break:
+</code></pre>
+</li>
+<li>
+<p><em>Displaying multiple images</em></p>
+<p>It is possible to display multiple images in a single window.
+It can be displayed either horizontly or vertically.
+One has to import numpy library for displaying multiple images.</p>
+<p><em>import numpy as np</em></p>
+<p>steps to display multiple images</p>
+<ul>
+<li>store the multiple images in different variables using imread() function.</li>
+<li>concatenate image Horizontally</li>
+</ul>
+<p>syntax:</p>
+<p>variablename=np.concatenate((image1,image2),axis=1)</p>
+<ul>
+<li>concatenate image Vertically</li>
+</ul>
+<p>syntax:</p>
+<p>variable_name=np.concatenate((image1,image2),axis=0)</p>
+<p><em>Here axis refers to mode of concatenation.</em></p>
+<p>axis=1 refers to horizontal concatenation.</p>
+<p>axis=0 refers to horizontal concatenation.</p>
+<ul>
+<li>Display the concatenated images using imshow() function.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+      <h1>Face and Eye detection with OpenCV</h1>
+      <p>In this session,</p>
+      <ul>
+<li>We will see what is <em>Haar classifier</em>.</li>
+<li>We will see programming on <em>face</em> and <em>eye</em> detection.</li>
+</ul>
+      <h2>Haar Classifier</h2>
+      <p><em>Face</em> and <em>Eye</em> detection works on the algorithm called <em>Haar Classifier</em> which is proposed by <em>Paul Viola</em> and <em>Michael Jones. In their paper, <em>"Rapid Object Detection
+using Boosted Cascade of Simple Features"</em></em> in 2001.</p>
+      <p><em>Haar Classifier is a <em>machine learning</em> based approach  where a function is trained from a lot of positive and negative images i.e with face and without face</em>.</p>
+      <p>Initially the algorithm needs lots of positive images(<em><em>with face</em>)and negative images(<em>without face</em>) to train the <em>classifier</em></em>(algorithm that sorts data in categories
+of information). Once all the features and details are extracted, they are stored in a file and if we get any new input image, check the feature from the file, apply it on the input image and if it passes all the stage then *<em>the face is detected</em>. So this can be done using *<em>Haar Features</em>.</p>
+      <p>So in short, <em>Haar Classifier</em> is a classifier which is used to detect the object for which it has been trained for from the source.</p>
+      <h2>Program on Face and Eye detection</h2>
+      <p>Before we add face and eye detection Haar Cascade files we need to import <em>OpenCV library</em>.</p>
+      <h3>To install OpenCV library on <em>anaconda prompt</em> execute the following commands:</h3>
+      <pre><code>                   pip install opencv-python
+                   pip install opencv-contrib-python
+</code></pre>
+      <h2>REQUIREMENTS</h2>
+      <h3>Code</h3>
+      <table>
+ <tbody><tr>
+  <td>
+<p>import cv2</p>
+<p>face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')</p>
+<p>eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')</p>
+<p>cap = cv2.VideoCapture(0)</p>
+<p>while 1:</p>
+<pre><code>ret, img = cap.read() 
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
+
+faces = face_cascade.detectMultiScale(gray, 1.3, 5) 
+
+for (x,y,w,h) in faces: 
+
+    cv2.rectangle(img,(x,y),(x+w,y+h),(255,255,0),2)  
+    
+    roi_gray = gray[y:y+h, x:x+w] 
+    
+    roi_color = img[y:y+h, x:x+w]
+    
+    eyes = eye_cascade.detectMultiScale(roi_gray)  
+    
+    for (ex,ey,ew,eh) in eyes: 
+    
+        cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,127,255),2) 
+        
+cv2.imshow('img',img) 
+
+k = cv2.waitKey(30) &amp; 0xff
+
+if k == 27: 
+
+    break
+</code></pre>
+<p>cap.release()</p>
+<p>cv2.destroyAllWindows()</p>
+</td>
+</tr>
+</tbody></table>
+      <h2>Explanation</h2>
+      <ul>
+<li>
+<p>Import Opencv library using <em>import cv2</em> statement</p>
+</li>
+<li>
+<p>Load the required XML classifiers for face and eye detection.</p>
+<pre><code>face_cascade=cv2.CascadeClassifier('haarcascade_frontal_face_default.xml')
+
+eye_cascade=cv2.CascadeClassifier('haarcascade_eye_default.xml')
+</code></pre>
+<h3>OR</h3>
+</li>
+<li>
+<p>Specify the path where XML classifiers are stored:</p>
+<p><strong>Example:</strong></p>
+<pre><code>face_cascade=cv2.CascadeClassifier('F:/is setup/haarcascade_frontal_face_default.xml')
+
+eye_cascade=cv2.CascadeClassifier('F:/is setup/haarcascade_eye.xml
+</code></pre>
+</li>
+<li>
+<p>Now initialize cap variable and capture the frames from the camera</p>
+<pre><code>cap=cv2.VideoCapture(0)
+</code></pre>
+</li>
+<li>
+<p>Using while loop read each frame from the camera and then perform the following steps:</p>
+<pre><code>      ret,img=cap.read()
+</code></pre>
+</li>
+<li>
+<p>Convert into gray scale frame.</p>
+<pre><code>     gray=cv2.cvtcolor(img,cv2.COLOR_BGR2GRAY)
+</code></pre>
+</li>
+<li>
+<p>Detect faces of different sizes in the input image</p>
+<pre><code> faces=face_cascade_detectMultiScale(gray,1.3,5)
+</code></pre>
+</li>
+<li>
+<p>Now our work is to draw a rectangle around the face and eye image using for loop</p>
+<pre><code>   for (x,y,w,h) in faces:
+   
+   cv2.rectangle(img(x,y),(x+w,y+h),(255,255,0),2)
+   
+   roi_gray=gray[y:y+h,x:x+w]
+   
+   roi_color=img[y:y+h,x:x+w]
+   
+   eyes=eye_cascade.detectMultiScale(roi_gray)
+
+      for (ex,ey,ew,eh) in eyes:
+
+           cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,127,255),2)
+</code></pre>
+</li>
+<li>
+<p>Display camera screen as output</p>
+<pre><code> cv2.imshow('img',img)
+</code></pre>
+</li>
+<li>
+<p>Last and the final step is to break the loop by pressing <em>Esc</em> button</p>
+<pre><code> k=cv2.waitKey(30) &amp; 0xff
+
+   if k=27;
+ 
+     break:
+</code></pre>
+</li>
+</ul>
+      
+      <b>Implementation in Jupyter Notebooks:</b>
+      
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Face%20detection/Kavya/Kavya_OpenCV_Basics.ipynb" >Basics of OpenCV</a><p>
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Face%20detection/Kavya/Kavya_OpenCV_face_and_eye_detection.ipynb" >Face and Eye Detection</a><p>
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/kavyad/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
