@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Image Filtering</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="Filtering recalculates each pixel after operating it with a mask or kernal. It is used for blurring, sharpening, edge detection and many more purposes. There are two component while convoluting:">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="keywords" content="image filtering,opencv,devincept,computer vision">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>Image Filtering</strong><br></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Om Rastogi </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/om-rastogi-a886b4b2/"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="https://omrastogi.github.io/omrastogi/index.html"><i class="fa fa-globe"></i></a></li>
+             
+            <li><a href="https://medium.com/@omrastogi"><i class="fab fa-medium"></i></a></li>
+            <li><a href="https://twitter.com/OmRastogi"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/omrastogi"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Image Filtering</h1>
+      <p>Filtering recalculates each pixel after operating it with a mask or kernal.
+It is used for blurring, sharpening, edge detection and many more purposes.
+There are two component while convoluting:</p>
+      <ul>
+<li>Image</li>
+<li>Kernal - matrix of size nxn (where n is always odd). The sum of the whole matrix is needed to be zero or near zero.
+To perform masking the kernal matrix is convoluted over the image.</li>
+</ul>
+      <h3>Convolution</h3>
+      <br>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/4486113afd494441959cd647d7555d2c6651ddd6f95b32deeba66d7d6ad971b8/68747470733a2f2f6d6c6e6f7465626f6f6b2e6769746875622e696f2f696d672f434e4e2f636f6e76536f62656c2e676966"><img src="https://camo.githubusercontent.com/4486113afd494441959cd647d7555d2c6651ddd6f95b32deeba66d7d6ad971b8/68747470733a2f2f6d6c6e6f7465626f6f6b2e6769746875622e696f2f696d672f434e4e2f636f6e76536f62656c2e676966" alt="Animation" data-canonical-src="https://mlnotebook.github.io/img/CNN/convSobel.gif" style="max-width:60%;height:auto;"></a></p>
+      <br>
+      <p>In mathematics convolution is defined as the sum of the product of the two functions after one is reversed and shifted. However, since in masking reversing a function doesn't make a differece therefore simple product of each element is sumed to save computation.</p>
+      <b>Formula for convolutional Network:</b><br>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/62693f0b663cb9bd8d6a4786403ef06a93fb8f86441c8ded3aebbba9f3bddce9/68747470733a2f2f70616765732e6a682e6564752f7e626d657369676e616c732f4e65772f646973635f636f6e765f65716e2e676966"><img src="https://camo.githubusercontent.com/62693f0b663cb9bd8d6a4786403ef06a93fb8f86441c8ded3aebbba9f3bddce9/68747470733a2f2f70616765732e6a682e6564752f7e626d657369676e616c732f4e65772f646973635f636f6e765f65716e2e676966" alt="formula" data-canonical-src="https://pages.jh.edu/~bmesignals/New/disc_conv_eqn.gif" style="max-width:100%;height:auto;"></a></p>
+      <br>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/3c63af7c826f70d7d80fb18de9bb21959054ab72353ea90580cef4af0266ae7b/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3436342f302a652d534d46547a4f387237736b6b7063"><img src="https://camo.githubusercontent.com/3c63af7c826f70d7d80fb18de9bb21959054ab72353ea90580cef4af0266ae7b/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3436342f302a652d534d46547a4f387237736b6b7063" alt="convolution operation" data-canonical-src="https://miro.medium.com/max/464/0*e-SMFTzO8r7skkpc" style="max-width:60%;height:auto;"></a></p>
+      <h2>Implementation in OpenCV Python</h2>
+      <p>The method cv2::filter2d is used to apply any custom image filter.</p>
+      <div class="highlight highlight-source-python"><pre><span class="pl-s1">dst</span> <span class="pl-c1">=</span> <span class="pl-s1">cv</span>.<span class="pl-en">filter2D</span>(<span class="pl-s1">src</span>, <span class="pl-s1">ddepth</span>, <span class="pl-s1">kernel</span> [, <span class="pl-s1">dst</span>[, <span class="pl-s1">anchor</span>[, <span class="pl-s1">delta</span>[, <span class="pl-s1">borderType</span>]]]]	)</pre></div>
+      <h3>Parameters</h3>
+      <p><strong>src, ddepth and kernal are essential parameter</strong> <br>
+<strong>src</strong>	       <code>:input image.</code></p>
+      <p><strong>ddepth</strong>     <code>:desired depth of the destination image, see combinations.</code></p>
+      <p><strong>kernel</strong>     <code>:convolution kernel (or rather a correlation kernel), a single-channel floating point matrix; if you want to apply different kernels to different channels, split the image into separate color planes using split and process them individually.</code></p>
+      <p><em>anchor</em>    <code>:anchor of the kernel that indicates the relative position of a filtered point within the kernel; the anchor should lie within the kernel; default value (-1,-1) means that the anchor is at the kernel center.</code></p>
+      <p><em>delta</em>	     <code>:optional value added to the filtered pixels before storing them in dst.</code></p>
+      <p><em>borderType</em> <code>:pixel extrapolation method, see BorderTypes. BORDER_WRAP is not supported.</code></p>
+      <h2>Application</h2>
+      <h3>Given the following image we'll discuss the effects of kernel</h3>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/925a3adf45a94ebc9154c98af1c0e706923c4546857ac40d4507be0b3c5a5197/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f352f35302f56642d4f7269672e706e67"><img src="https://camo.githubusercontent.com/925a3adf45a94ebc9154c98af1c0e706923c4546857ac40d4507be0b3c5a5197/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f352f35302f56642d4f7269672e706e67" alt="img" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" style="max-width:15%;height:auto;"></a></p>
+      <h3>Sharpen</h3>
+<p>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/f981eddf57aa7edb30714de3b5930b9f98f2c323c06177f2b4e0c3d361d07337/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f62656238623961343933653862396366356465636364363162643834356135396561326536326363"><img src="https://camo.githubusercontent.com/f981eddf57aa7edb30714de3b5930b9f98f2c323c06177f2b4e0c3d361d07337/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f62656238623961343933653862396366356465636364363162643834356135396561326536326363" alt="kernal" data-canonical-src="https://wikimedia.org/api/rest_v1/media/math/render/svg/beb8b9a493e8b9cf5deccd61bd845a59ea2e62cc" style="max-width:15%;height:auto;"></a> 
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/66e04718e05787f4f30af2aecfad1b0ccd0452b0553e2661a6ad447ba902315e/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34652f56642d53686172702e706e67"><img src="https://camo.githubusercontent.com/66e04718e05787f4f30af2aecfad1b0ccd0452b0553e2661a6ad447ba902315e/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34652f56642d53686172702e706e67" alt="img" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Vd-Sharp.png" style="max-width:15%;height:auto;"></a>
+</p>
+      <h3>Average Blurring</h3>
+      <p>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/7e77a498bcd74f962b16216b545680880d75e1bfe01d4015d8b0ca332d41d909/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f39313235366266656563653333343466383630326532383864343435653634323263386238613163"><img src="https://camo.githubusercontent.com/7e77a498bcd74f962b16216b545680880d75e1bfe01d4015d8b0ca332d41d909/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f39313235366266656563653333343466383630326532383864343435653634323263386238613163" alt="kernal" data-canonical-src="https://wikimedia.org/api/rest_v1/media/math/render/svg/91256bfeece3344f8602e288d445e6422c8b8a1c" style="max-width:15%;height:auto;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/840a1c4111dafa005a928fb0e3fb5afe96367fe1136e2ae6286828b5ec2ae421/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f322f32382f56642d426c7572312e706e67"><img src="https://camo.githubusercontent.com/840a1c4111dafa005a928fb0e3fb5afe96367fe1136e2ae6286828b5ec2ae421/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f322f32382f56642d426c7572312e706e67" alt="img" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/2/28/Vd-Blur1.png" style="max-width:15%;height:auto;"></a>
+</p>
+      <h3>Edge Detection</h3>
+      <p>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/d4843ad8215e70613082e495a2c2e8434848c0a3fbbfc73c592f133767562d4e/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f66383030616435663736623663323663373239666630633166656634343238346437636164653761"><img src="https://camo.githubusercontent.com/d4843ad8215e70613082e495a2c2e8434848c0a3fbbfc73c592f133767562d4e/68747470733a2f2f77696b696d656469612e6f72672f6170692f726573745f76312f6d656469612f6d6174682f72656e6465722f7376672f66383030616435663736623663323663373239666630633166656634343238346437636164653761" alt="kernal" data-canonical-src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f800ad5f76b6c26c729ff0c1fef44284d7cade7a" style="max-width:15%;height:auto;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/5e33ff8194b5b3637a9d3bc96e590a270716ec9ffaf9e99715c545b75605c038/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36642f56642d45646765332e706e67"><img src="https://camo.githubusercontent.com/5e33ff8194b5b3637a9d3bc96e590a270716ec9ffaf9e99715c545b75605c038/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36642f56642d45646765332e706e67" alt="img" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Vd-Edge3.png" style="max-width:15%;height:auto;"></a>
+</p>
+      <p>
+This is one of the most powerful technique in the arsenal of image processsing, present day Convoutional models are based on this operations to find different features in the network.</p>
+      
+      
+      <b>Implementation in Jupyter Notebooks:</b>
+      
+      <p><a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Image%20Filtering/Om/Om_OpenCv_ImageFiltering.ipynb" >Image Filtering</a><p>
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/filter/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
