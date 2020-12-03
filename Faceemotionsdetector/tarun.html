@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Face Emotions Detector</title>
+    <meta name="theme-color" content="rgb(255,255,255)">
+    <meta name="description" content="Now on to This Amazing and Simple Project that I made !
+The MAIN AIM was to try to understand if a computer can understand human emotions . Think about it this way ,
+computers are REALLY smart when it comes to crunching down numbers or even trying to find correlations in 
+datasets that they have never seen before in just a few ">
+    <meta name="keywords" content="face and eye detection,face emotion detector,opencv,devincept,computer vision">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crete+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/regression.css">
+    <link rel="stylesheet" href="assets/css/author.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navigation" style="padding: 25px 0px;background-color: white;">
+        <div class="container-fluid container"><a class="navbar-brand" href="#" style="background-image: url(&quot;assets/img/CODES.gif&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 170px;height: 65px;"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="navcol-1" style="font-family: Roboto, sans-serif;font-weight: bold;">
+                <ul class="nav navbar-nav ml-auto" style="font-size: 13px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.codes/contribute.html">Contribute</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="https://devincept.tech/pricing.html">Free courses</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://devincept.codes/sponsor.html">Sponsor us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" style="background-color: #2f1b1b;color: rgb(255,255,255);">
+        <div style="padding: 30px;">
+            <p class="d-flex justify-content-center" style="font-family: Belgrano, serif;">&nbsp;OpenCV</p>
+            <h1 class="d-flex justify-content-center topic-title" style="font-family: Belgrano, serif;"><strong>&nbsp;</strong><br><strong>Face Emotions Detector&nbsp;with OpenCV</strong></h1>
+        </div>
+        <div id="base" style="background-color: rgba(255,255,255,0.1);padding: 10px 0;font-family: Belgrano, serif;">
+            <p class="justify-content-center"><i class="fa fa-align-center"></i>&nbsp; Reads&nbsp;<span id="visits">0</span></p>
+        </div>
+    </section>
+    <section id="sidetab" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <div class="col-3 author">
+                    <div class="author-details"><div>
+    <div class="author">
+        
+        <h2 class="author-title"> Author's Details </h2>
+        
+        <h3 class="author's-name"> Tarun Krishnan </h3>
+      
+        
+        <ul style="padding:0px;">
+            
+            <li><a href="https://www.linkedin.com/in/tarunkrishnan2000/"><i class="fab fa-linkedin"></i></a></li>
+            
+             <li><a href="mailto:tarun36rocker@gmail.com"><i class="fa fa-envelope"></i></a></li>
+             
+            
+            <li><a href="https://www.facebook.com/profile.php?id=100009645905136"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://github.com/tarun36rocker"><i class="fab fa-github"></i></a></li>
+            
+        </ul>
+    </div>
+</div></div>
+                </div>
+                <div class="col-9 main-content">
+                    <div class="content-inner"><div>
+  <div class="regression-content">
+      <h1>Face Emotions Detector</h1>
+      <b>Now on to This Amazing and Simple Project that I made !</b>
+      <p>The MAIN AIM was to try to understand if a computer can understand human emotions . Think about it this way ,
+computers are REALLY smart when it comes to crunching down numbers or even trying to find correlations in 
+datasets that they have never seen before in just a few minutes or hours! Something which humans study their whole lives for !
+So that really was the purpose of this project , to see if just by providing few images if a computer
+can understand basic human emotions , something which even humans find difficult to understand !
+
+WHERE can we use this project ? This project can be used in every field possible to be honest ! It can be used 
+to detect workplace mannerisms , observe the reactions of people while viewing your product and list goes
+ON AND ON !!
+</p>
+      <p>So lets begin !</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic1.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic1.png" alt="alt text" style="max-width:100%;"></a><br>
+Just like how we need to brush every morning , we need to import few key modules that are required for the WHOLE
+program to run succesfully</p>
+      <ul>
+<li>Sequential :: This is the base/framework that you we will be using to integrate the different layers of the Neural Network !</li>
+<li>Conv2D , MaxPooling2D , Flatten , Dense :: The above four lines are the different "Layers" that will be used in our Deep Learning model.</li>
+<li>ImageDataGenerator :: I will explain this very important function when we get to that part of the code !</li>
+</ul>
+      <pre><code>Now it's time to build our DEEP LEARNING/NEURAL NETWORK Model .   
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic2.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic2.png" alt="alt text" style="max-width:100%;"></a></p>
+      <ul>
+<li>Sequential :: This is the base or framework on which your model is built on</li>
+<li>Conv2D , MaxPooling2D :: Are the first two layers that we are using in this model ,
+If you noticed , we are adding these two layers again . WHY ?
+The simple answer is more the layers , the more the network gets to understand , however just because we add more layers
+doesnt necessarily mean that it will always help with our model's accuracy . Sometimes the model may tend to <a href="https://www.investopedia.com/terms/o/overfitting.asp#:~:text=Overfitting%20is%20a%20modeling%20error,in%20the%20data%20under%20study." rel="nofollow">Overfit</a>,
+so you have to be careful while adding more layers , for our model as we have a limited data set , 2 layers should suffice .</li>
+<li>Flatten :: is the third layer we will be using which we will be using which is basically compressing our data to suit our model</li>
+<li>Dense :: We have 2 DENSE layers , the first dense layer connects to the ACTIVATION FUNCTION which is responsible for transforming
+the summed weighted input from the node into the activation of the node or output for that input ( very high level , I know ! )
+The second Dense layer helps in finally providing the OUTPUT in the form of a list which we will later observe !</li>
+<li>compile :: Finally we are compiling all the different layers together and forming our MODEL , we will be testing our data
+on 'ACCURACY' and  basing our loss on 'Categorical_crossentropy' which is a method used when we have more than 2 types (BINARY) data</li>
+</ul>
+      <pre><code>Now Lets start builing our dataset !But before that , we need to create some folders !
+Our folders should be arranged in the following format because otherwise the model
+may not be able to train based on the categories correctly otherwise ! You have to ensure that there is main 'dataset' folder and in 
+that there are 3 subfolders -
+1)single_pred - which will be used to check if the model is working after compiling the model
+2) test_set - folder used to contain the test data 
+3) training_data - folder used to contain the training data
+
+Now inside these subfolders:
+1)single_pred - choose random pictures to evaluate your model
+2)test_data and training_data has to have 5 sub folders as seen in the pictures , where each folder will stand for their respective
+cateogires
+Inisde each of these emotions folders will contain the pictures or data that is pertailing to the category of the emotion 
+that it is supposed to represent
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic3.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic3.png" alt="alt text" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic4.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic4.png" alt="alt text" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic5.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic5.png" alt="alt text" style="max-width:100%;height:auto;"></a>
+Now that we have created our folders , you might be asking how do we get this data ?
+The simple answer is we will be SCRAPING our data using BingImageCrawler !</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic6.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic6.png" alt="alt text" style="max-width:100%;"></a>
+As you can see from the above picture , this is the format of getting the images from Bing images , I would have preffered
+using Google as the source but their crawler is having some issues so Bing will suffice for now!
+Make sure you populate your dataset in this way and give the max number to set how many pictures you want in your folders
+But keep in mind , you can't straight away scrape 20,000 images of sort because The bing page that you will be searching for has
+a limit ! So go crazy and see what the limit is for scraping !</p>
+      <p>Now lets connect the datasets and get our model ready for training !</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic7.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic7.png" alt="alt text" style="max-width:100%;"></a></p>
+      <pre><code>1)train_datagen :: This helps us to create multiple different versions of our data that have because we have only a
+limited dataset . This makes the different versions based on the conditions that we have provided .
+Make sure you enter THE CORRECT DIRECTORY of the folders as seen in the picture above and as instructed before.
+
+2)training_set.class_indices :: helps us check if our model has been successfully connected to the right folders and
+all our categories have been recognised !
+</code></pre>
+      <p>Now lets FIT and TRAIN our model on the !</p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic8.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic8.png" alt="alt text" style="max-width:100%;"></a></p>
+      <pre><code>1) fit_generator :: helps us by connecting the test and training data sets and runs the model and helps the model 
+learn between the different categories through multiple epochs(complete run through of data)
+The number of epochs is totally your choice based on your cpu computing power , however be careful while selecting
+because sometimes the more the epochs , your model will start over-fitting which is not good for the 
+performance of your model !
+
+2)save :: We will be saving our model in a .h5 file so that we dont have to wait for hours just to run the program every single time 
+</code></pre>
+      <p>Ok! Now lets first test if our model is working by simply sending the picture through a few lines of code as shown below</p>
+      <ul>
+<li>
+<p>The code basically shows that the model is first loaded as seen in LINE 4</p>
+</li>
+<li>
+<p>The picture is then loaded and it is converted into an array which is
+expected by our model for predicting ( as seen in LINES 5-7 )</p>
+</li>
+<li>
+<p>LINE 8 recives the prediction from our model</p>
+</li>
+<li>
+<p>LINES 9 - 16 is a simple block of code that i wrote which helps us in outputing the category of emotion the model is predicting</p>
+</li>
+</ul>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic9.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic9.png" alt="alt text" style="max-width:100%;"></a></p>
+      <pre><code>This is a picture of me starting at the camera looking quiet emotionless , lets see what our classifier outputs !
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic11.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic11.png" alt="alt text" style="max-width:30%;height:auto;"></a></p>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic10.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic10.png" alt="alt text" style="max-width:100%;"></a></p>
+      <pre><code>This picutre predicts a list which through coding can be found that it denotes the thrird element which in this case is 
+index 'two' ( considering the array's index starts from 0 } which in terms of our categories means that our model is predicting
+that I am in "Fear"
+Not a bad prediction to be honest !
+</code></pre>
+      <p>Now that we have done a basic check , Lets start by integrating it with the OpenCV to make our model real-time by accessing
+your camera !
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic12.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic12.png" alt="alt text" style="max-width:100%;"></a></p>
+      <ul>
+<li>
+<p>LINES 1-5 are the set of IMPORTING that is required for the functioning of the code that is about to come</p>
+</li>
+<li>
+<p>LINE 6 is required for LOADING the model</p>
+</li>
+<li>
+<p>LINE 7 is the line that helps in accessing the webcam at the default port '0' through OpenCV</p>
+</li>
+<li>
+<p>LINE 8 is the file that will be used to DETECT OUR FACES in the live frames , this file can easily be downloaded
+from the internet from various sources</p>
+</li>
+</ul>
+      <pre><code>Now lets move on to our MAIN FUNCTION that will detect our face from the webcam feed and
+run the frames through the model !
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic13.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic13.png" alt="alt text" style="max-width:100%;"></a></p>
+      <ul>
+<li>
+<p>LINE 14 creates a copy of the frame that is being passed so that the original fame does not get changed or
+corrupted while applying different functions to it</p>
+</li>
+<li>
+<p>LINE 15 passes the frame through our HAAR CASCADE filter which finds our face and returns back the coordinates
+of a box which has our location</p>
+</li>
+<li>
+<p>LINE 16 -17 go through the coordinates and captures the EXACT region our face is present in</p>
+</li>
+<li>
+<p>LINE 18 RESIZES our frame so as to make it work with our model</p>
+</li>
+<li>
+<p>LINE 19 saves every individual frame as a picture so that we can work on them easily rather directly
+taking them as a frame from our webcam</p>
+</li>
+<li>
+<p>LINE 20-22 loads our frame ( in the form of a picture ) , converts to an array and makes it suitable
+so as to pass through the model</p>
+</li>
+<li>
+<p>LINE 23-29 is a repeat of the function that i have shown above , in short it helps by storing the prediction
+which is the number of the category that the model has predicted</p>
+</li>
+</ul>
+      <pre><code>Now lets move on to add our prediction on the live feed on the opened tab
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic14.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic14.png" alt="" style="max-width:100%;height:auto;"></a></p>
+      <ul>
+<li>
+<p>The basic IF - ELSE conditions basically figures out which category is mapped to which emotion and also provides
+a colour to them in the BGR colour scheme</p>
+</li>
+<li>
+<p>The remaining lines helpes us to write theese predictions on the live webcam feed with the desired colour .
+If you notice we are skipping every next frames (using frame_count) , this is to prevent overlapping of predictions !</p>
+</li>
+<li>
+<p>FINALLY we return the image containing the predictions back to the WHILE loop which will be shown next</p>
+</li>
+</ul>
+      <pre><code>Lets have a look at the MAIN WHILE LOOP that instigates the whole code
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic15.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic15.png" alt="" style="max-width:100%;"></a></p>
+      <p>What the while loop basically does is take every frame that it recieves through the webcam and passes it to
+the emotions detection function</p>
+      <pre><code>Now for the MOST AWAITED MOMENT , LETS FINALLY lets have a look at how the model WORKS!!
+</code></pre>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic16.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic16.png" alt="" style="max-width:100%;height:auto;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic17.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic17.png" alt="" style="max-width:100%;height:auto;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/tarun36rocker/Open-contributions/blob/master/pic18.png"><img src="https://github.com/tarun36rocker/Open-contributions/raw/master/pic18.png" alt="" style="max-width:100%;height:auto;"></a></p>
+      <br><br>
+      <b>Looks like computers are able to understand human emotions after all !
+Make sure to train your data on more and more images as it yields much BETTER RESULTS !</b>
+      
+      <p>Implementation in <a style="color:blue;" href="https://github.com/Learn-Write-Repeat/cv/blob/main/Faceemotionsdetector/faceemotionsdetector.ipynb">Jupyter Notebook</a></p>
+      
+      
+      
+      <br>
+      <p>So you have completed this topic. Congratulations <g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji><g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji>.
+      <br>Hope you learnt something new
+      <br>Happy Learning!! 📚</p>
+   </div>
+
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="d-flex flex-column justify-content-center align-items-center" id="footer" style="padding-bottom: 0;">
+        <h1>DevIncept.codes</h1>
+        <h5>Contact us:</h5>
+        <p>Email:<a href="#">&nbsp;support@devincept.tech</a></p>
+        <div class="d-flex flex-row" id="social-button"><button class="btn btn-primary" type="button"><a href="https://www.linkedin.com/company/devincept/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 24px;" href=""></i></a></button><button class="btn btn-primary" type="button"><a href="https://www.facebook.com/DevIncept/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px;"></i></a></button>
+            <button
+                class="btn btn-primary" type="button"><a href="https://www.instagram.com/devincept.tech/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></button><button class="btn btn-primary" type="button"><a href="https://github.com/Learn-Write-Repeat" target="_blank"><i class="fa fa-github" style="font-size: 24px;"></i></a></button></div>
+    </footer>
+<script>
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
+<script async src="https://api.countapi.xyz/hit/tarun/visits?callback=cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
